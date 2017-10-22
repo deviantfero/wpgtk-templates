@@ -48,7 +48,7 @@ switch:checked slider {
     transition: all 0.3s cubic-bezier(0, 0, 0.2, 1), color 0, margin 0, background-image 0;
     animation: needs_attention 0.3s cubic-bezier(0, 0, 0.2, 1) forwards;
     margin: -4px -4px -4px 0;
-    color: #FFFFFF;
+    color: @theme_selected_fg_color;
 }
 switch:checked:disabled slider {
     animation: none;

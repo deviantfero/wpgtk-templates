@@ -1,29 +1,29 @@
 #modded Numix gtkrc
 
-gtk-color-scheme = "bg_color:#161616
-fg_color:#fff
-base_color:#090909
-text_color:#fff
-selected_bg_color:#747780
-selected_fg_color:#FFFFFF
-tooltip_bg_color:#202020
-tooltip_fg_color:#fff
-titlebar_bg_color:#181818
-titlebar_fg_color:#fff
-menubar_bg_color:#181818
-menubar_fg_color:#fff
-toolbar_bg_color:#181818
-toolbar_fg_color:#fff
-menu_bg_color:#181818
-menu_fg_color:#fff
-panel_bg_color:#181818
-panel_fg_color:#fff
-link_color:#8EC3EB"
+gtk-color-scheme = "bg_color:#2f2427
+fg_color:#fefed9
+base_color:#241C1E
+text_color:#fefed9
+selected_bg_color:#afa677
+selected_fg_color:#fefed9
+tooltip_bg_color:#2f2427
+tooltip_fg_color:#fefed9
+titlebar_bg_color:#1e1719
+titlebar_fg_color:#fefed9
+menubar_bg_color:#1e1719
+menubar_fg_color:#fefed9
+toolbar_bg_color:#1e1719
+toolbar_fg_color:#fefed9
+menu_bg_color:#1e1719
+menu_fg_color:#fefed9
+panel_bg_color:#1e1719
+panel_fg_color:#fefed9
+link_color:#afa677"
 gtk-auto-mnemonics	= 1
 
 # Default Style
 # DO --NOT-- CHANGE ACTIVE
-# IT's THE COLOR THAT WPGTK REPLACES
+# IT's THE COLOR THAT WPGTK fef5afES
 # FEEL FREE TO MODIFY EVERYTHING ELSE IN gtkrc.base
 
 style "murrine-default" {

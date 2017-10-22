@@ -14,12 +14,12 @@ menubar > menuitem,
     transition: all 0.1s cubic-bezier(0, 0, 0.2, 1), color 0;
     min-height: 8px;
     padding: 2px 8px;
-    color: #fff;
+    color: @theme_selected_fg_color;
 }
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
     background-color: @theme_selected_bg_color;
-    color: #fff;
+    color: @theme_selected_fg_color;
 }
 menubar > menuitem:disabled,
 .menubar > menuitem:disabled {
@@ -48,7 +48,7 @@ menu menuitem,
 menu menuitem:hover,
 .menu menuitem:hover {
     background-color: @theme_selected_bg_color;
-    color: #FFFFFF;
+    color: @theme_selected_fg_color;
 }
 menu menuitem:disabled,
 .menu menuitem:disabled {

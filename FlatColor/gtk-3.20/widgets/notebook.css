@@ -111,24 +111,24 @@ notebook > header tab {
     outline-offset: -6px;
     border-width: 1px;
     border-color: transparent;
-    color: #fff;
+    color: @theme_selected_fg_color;
     font-weight: 500;
 }
 notebook > header tab:hover {
-    color: #fff;
+    color: @theme_selected_fg_color;
 }
 notebook > header tab:hover.reorderable-page {
     border-color: @theme_selected_bg_color;
     background-color: @tooltip_bg_color;
 }
 notebook > header tab:disabled {
-    color: #fff;
+    color: @theme_selected_fg_color;
 }
 notebook > header tab:checked {
-    color: #fff;
+    color: @theme_selected_fg_color;
 }
 notebook > header tab:checked:disabled {
-    color: #fff;
+    color: @theme_selected_fg_color;
 }
 notebook > header tab:checked:not(.reorderable-page) {
     animation: tab_ripple_effect 0.6s ease-in-out;

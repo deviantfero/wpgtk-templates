@@ -8,6 +8,10 @@ radio {
     background-color: @base_color;
     margin-right: 5px;
 }
+
+radio {
+    border-radius: 10px;
+}
 check:hover,
 check:active,
 radio:hover,
@@ -19,7 +23,7 @@ check:checked,
 check:checked:disabled,
 radio:checked,
 radio:checked:disabled {
-    background-color: shade(@theme_selected_bg_color, 0.7);
+    background-color: shade(@theme_selected_bg_color, 0.9);
 }
 check:checked,
 check:indeterminate,
@@ -31,7 +35,7 @@ check:checked:disabled,
 check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
-    color: rgba(68, 138, 255, 0.4);
+    color: rgba(@theme_bg_color, 0.4);
 }
 check:only-child,
 radio:only-child {} menu menuitem check,
@@ -119,17 +123,17 @@ treeview.view radio:indeterminate:disabled {
 }
 treeview.view check:selected,
 treeview.view radio:selected {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(@theme_fg_color, 0.75);
 }
 treeview.view check:selected:hover,
 treeview.view check:selected:active,
 treeview.view radio:selected:hover,
 treeview.view radio:selected:active {
-    color: #FFFFFF;
+    color: @theme_selected_fg_color;
 }
 treeview.view check:selected:disabled,
 treeview.view radio:selected:disabled {
-    color: rgba(255, 255, 255, 0.3);
+    color: shade(@theme_selected_fg_color, 0.3);
 }
 treeview.view check:selected:checked,
 treeview.view check:selected:indeterminate,
