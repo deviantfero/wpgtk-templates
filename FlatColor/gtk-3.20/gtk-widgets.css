@@ -121,7 +121,7 @@ placessidebar row:selected {
     color: @theme_selected_fg_color;
 }
 placessidebar row:disabled {
-    color: rgba(@theme_selected_bg_color, 0.32);
+    color: shade(@theme_selected_bg_color, 0.32);
 }
 placessidebar row image.sidebar-icon {
     opacity: 0.6;
@@ -366,7 +366,7 @@ GtkStatusbar {
 iconview text,
 textview text {
     background-color: @base_color;
-    color: rgba(@theme_fg_color, 0.8);
+    color: @theme_fg_color;
 }
 .view text:disabled,
 iconview text:disabled,
