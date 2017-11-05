@@ -9,11 +9,11 @@
 
 [colors]
 background = ${xrdb:color8}
-background-alt = #120B0F
+background-alt = #COLOR8
 foreground = ${xrdb:color15}
 foreground-alt = ${xrdb:color15}
-active = #6a8e7a
-inactive = #3c5045
+active = #COLORACT
+inactive = #COLORIN
 
 [bar/wpgtk]
 monitor = ${env:MONITOR}
@@ -105,33 +105,40 @@ type = internal/i3
 format = <label-mode><label-state>
 index-sort = true
 wrapping-scroll = false
+fuzzy-matching = true
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 9;
+ws-icon-3 = 10;
+ws-icon-default = 
 
 label-mode-padding = 2
 label-mode-foreground = ${colors.foreground}
 label-mode-background = ${xrdb:color2}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+; label-focused = %index%
 label-focused-background = ${colors.active}
-label-focused-padding = 2
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 2
+; label-unfocused = %index%
+label-unfocused-padding = 1
 label-unfocused-background = ${colors.inactive}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-padding = ${self.label-focused-padding}
+; label-visible = %index%
+label-visible-background = ${xrdb:color2}
+label-visible-padding = 1
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+; label-urgent = %index%
+label-urgent-background = ${xrdb:color2}
+label-urgent-padding = 1
 
 [module/mpd]
 type = internal/mpd
