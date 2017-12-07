@@ -7,7 +7,8 @@ set $alt Mod1
 set $coloract "#COLORACT"
 set $colorin "#COLORIN"
 set_from_resource $white i3wm.color15 "#COLORX15"
-set_from_resource $split i3wm.color10 "#COLOR10"
+set_from_resource $split i3wm.color10 "#COLORX10"
+set_from_resource $coloru i3wm.color2 "#COLOR2"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -16,7 +17,6 @@ font pango:monospace 8
 gaps outer 0
 gaps inner 8
 new_window pixel 3
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -87,6 +87,7 @@ bindsym --release Print exec scrot
 bindsym --release Shift+Print exec scrot -s
 bindsym $mod+f exec thunar
 bindsym $mod+w exec google-chrome-stable
+bindsym $mod+m exec urxvt -e ncmpcpp
 bindsym $mod+$alt+t exec wpg -m
 bindsym $alt+Tab exec rofi -show window
 
@@ -94,7 +95,7 @@ bindsym $alt+Tab exec rofi -show window
 client.focused          $coloract $coloract $white  $split $coloract
 client.focused_inactive $coloract $coloract $white  $split $coloract
 client.unfocused        $colorin  $colorin  #888888 $split $colorin
-client.urgent           #2f343a   #900000   $white  #900000 #900000
+client.urgent           $coloru   $coloru   $white  $coloru $coloru
 client.placeholder      #000000   #0c0c0c   $white  #000000 #0c0c0c
 
 client.background       #ffffff
@@ -134,10 +135,10 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        bindsym l resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym h resize grow width 10 px or 10 ppt
+        bindsym l resize shrink width 30 px or 10 ppt
+        bindsym j resize grow height 30 px or 10 ppt
+        bindsym k resize shrink height 30 px or 10 ppt
+        bindsym h resize grow width 30 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -169,9 +170,18 @@ bindsym $mod+a mode "monitor"
 #         status_command i3status
 # }
 
+# window specific things
+assign [class = "Firefox"] 1
+assign [class = "Google-chrome"] 1
+assign [class = "zoom"] 9
 
-exec --no-startup-id "setxkbmap -option caps:escape"
-exec --no-startup-id exec volumeicon
-exec --no-startup-id exec compton
-exec --no-startup-id ~/.wallpapers/wp_init.sh 
-exec_always --no-startup-id exec ~/Code/scripts/polybar.sh &
+for_window [class = "Firefox"] layout tabbed
+for_window [class = "Google-chrome"] layout tabbed
+for_window [class = "Wpg"] floating enable
+
+
+# exec --no-startup-id "setxkbmap -option caps:escape"
+# exec --no-startup-id exec volumeicon
+# exec --no-startup-id exec compton
+# exec --no-startup-id ~/.wallpapers/wp_init.sh 
+# exec_always --no-startup-id exec ~/Code/scripts/polybar.sh
