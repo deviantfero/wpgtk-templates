@@ -21,13 +21,13 @@ width = 100%
 height = 24
 offset-y = 0%
 radius = 0.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
+line-size = 0
+label-line-color = #f00
 
 border-size = 0
 border-color = #00000000
@@ -41,9 +41,9 @@ module-margin-right = 0
 font-0 = menlo:fontformat=truetype:size=8:antialias=true;2
 font-1 = FontAwesome:style=Regular:size=10:antialias=false;2
 
-modules-left = i3 xwindow
-modules-center = mpd
-modules-right =  volume wlan eth temperature battery date powermenu
+modules-left = i3
+modules-center = xwindow
+modules-right =  volume wlan eth date temperature battery
 
 tray-position = none
 tray-padding = 10
@@ -144,14 +144,16 @@ label-urgent-padding = 1
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-play = ⏵
+icon-pause = ⏸
+icon-stop = ⏹
+icon-prev = ⏮
+icon-next = ⏭
 
 label-song-maxlen = 25
 label-song-ellipsis = true
+format-playing-padding = 2
+format-playing-background = ${xrdb:color4}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -247,7 +249,7 @@ interval = 5
 date =
 date-alt = " %d/%m/%Y"
 
-time = %I:%M %p
+time = %I:%M 
 time-alt = %I:%M %p
 
 format-prefix = 
@@ -276,16 +278,16 @@ label-muted = MUTED
 format-muted-padding = 2
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.active}
+bar-volume-foreground-0 = ${xrdb:color2}
 bar-volume-gradient = false
-bar-volume-indicator = ◉
+bar-volume-indicator =  
 bar-volume-indicator-font = 1
-bar-volume-fill = ▬
-bar-volume-fill-font = 2
-bar-volume-empty = ▬
+bar-volume-fill = ●
+bar-volume-fill-font = 1
+bar-volume-empty = ●
 
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.background}
+bar-volume-empty-foreground = ${xrdb:color0}
 
 [module/battery]
 type = internal/battery
@@ -316,9 +318,9 @@ animation-charging-4 =  
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 format-charging-padding = 2
-format-charging-background = ${colors.active}
+format-charging-background = ${xrdb:color2}
 format-discharging-padding = 2
-format-discharging-background = ${colors.inactive}
+format-discharging-background = ${colors.active}
 
 [module/temperature]
 type = internal/temperature
