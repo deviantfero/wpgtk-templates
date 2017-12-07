@@ -7,7 +7,7 @@ rofi.color-normal:                   #COLOR0, #COLORX15, #COLOR0, #COLORACT, #CO
 rofi.color-urgent:                   #COLOR0, #d6b48d, #22231D, #d6b48d, #COLORX15
 rofi.color-active:                   #COLOR0, #COLORX14, #COLOR0, #COLORX14, #COLOR0
 rofi.color-window:                   #COLOR0, #COLORACT, #COLORIN
-rofi.bw:                             7
+rofi.bw:                             5
 rofi.location:                       0
 rofi.padding:                        5
 rofi.yoffset:                        0
@@ -18,7 +18,7 @@ rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
 rofi.run-command:                    {cmd}
 rofi.parse-hosts:                    true
-rofi.matching:                       fuzzy
+rofi.matching:                       normal
 rofi.separator-style:                none
 rofi.scrollbar-width:                0
 rofi.kb-mode-next:                   Shift+Right,Control+Tab,Alt+l
