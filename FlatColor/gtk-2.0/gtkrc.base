@@ -1,23 +1,18 @@
 #modded Numix gtkrc
 
-gtk-color-scheme = "bg_color:#COLORTOOL
+gtk-color-scheme = "bg_color:#COLOR0
 fg_color:#COLORX15
-base_color:#COLORBASE
 text_color:#COLORX15
 selected_bg_color:#COLORACT
 selected_fg_color:#COLORX15
-tooltip_bg_color:#COLORTOOL
+tooltip_bg_color:#COLOR8
 tooltip_fg_color:#COLORX15
-titlebar_bg_color:#COLORBG
+titlebar_bg_color:#COLOR8
 titlebar_fg_color:#COLORX15
-menubar_bg_color:#COLORBG
+menubar_bg_color:#COLOR8
 menubar_fg_color:#COLORX15
-toolbar_bg_color:#COLORBG
-toolbar_fg_color:#COLORX15
-menu_bg_color:#COLORBG
+menu_bg_color:#COLOR8
 menu_fg_color:#COLORX15
-panel_bg_color:#COLORBG
-panel_fg_color:#COLORX15
 link_color:#COLORACT"
 gtk-auto-mnemonics	= 1
 
@@ -123,23 +118,23 @@ style "murrine-default" {
 	fg[ACTIVE] = @fg_color
 	fg[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
 
-	bg[NORMAL] = @bg_color
+	bg[NORMAL] = shade(1.10, @bg_color)
 	bg[PRELIGHT] = shade (1.02, @bg_color)
 	bg[SELECTED] = @selected_bg_color
 	bg[ACTIVE] = shade (0.9, @bg_color)
 	bg[INSENSITIVE] = @bg_color
 
-	base[NORMAL] = @base_color
-	base[PRELIGHT] = shade (0.95, @base_color)
+	base[NORMAL] = shade(0.90, @bg_color)
+	base[PRELIGHT] = shade (0.90, @bg_color)
 	base[SELECTED] = @selected_bg_color
 	base[ACTIVE] = @selected_bg_color
-	base[INSENSITIVE] = shade (0.85, @base_color)
+	base[INSENSITIVE] = shade (0.80, @bg_color)
 
 	text[NORMAL] = @text_color
 	text[PRELIGHT] = @text_color
 	text[SELECTED] = @selected_fg_color
 	text[ACTIVE] = @selected_fg_color
-	text[INSENSITIVE] = mix (0.5, @base_color, @text_color)
+	text[INSENSITIVE] = mix (0.5, @bg_color, @text_color)
 
 	engine "murrine" {
 		animation = FALSE
@@ -158,7 +153,7 @@ style "murrine-default" {
 		lightborderstyle = 1 # 0 = lightborder on top side, 1 = lightborder on all sides
 		listviewheaderstyle = 0 # 0 = flat, 1 = glassy, 2 = raised
 		listviewstyle = 0 # 0 = none, 1 = dotted, 2 = line
-		menubaritemstyle = 1 # 0 = menuitem look, 1 = button look
+		menubaritemstyle = 0 # 0 = menuitem look, 1 = button look
 		menubarstyle = 0 # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
 		menuitemstyle = 0 # 0 = flat, 1 = glassy, 2 = striped
 		menustyle = 0 # 0 = none, 1 = vertical striped
@@ -191,7 +186,7 @@ style "murrine-thin" {
 
 style "murrine-notebook-bg" {
 	bg[NORMAL] = @bg_color
-	bg[ACTIVE] = shade (1.05, @base_color)
+	bg[ACTIVE] = shade (0.70, @bg_color)
 }
 
 style "murrine-notebook" = "murrine-notebook-bg" {
@@ -233,8 +228,8 @@ style "murrine-overlay-scrollbar" {
 	bg[ACTIVE] = shade (0.8, @bg_color)
 	bg[INSENSITIVE] = shade (0.97, @bg_color)
 
-	base[SELECTED] = shade (0.6, @base_color)
-	base[INSENSITIVE] = shade (0.85, @base_color)
+	base[SELECTED] = shade (0.6, @bg_color)
+	base[INSENSITIVE] = shade (0.85, @bg_color)
 }
 
 style "murrine-scale" = "murrine-thin" {
@@ -254,7 +249,7 @@ style "murrine-scale" = "murrine-thin" {
 
 style "murrine-progressbar" = "murrine-thin" {
 	bg[NORMAL] = @bg_color
-	bg[ACTIVE] = shade(1.08, @base_color)
+	bg[ACTIVE] = shade(0.60, @bg_color)
 
 	fg[PRELIGHT] = @selected_fg_color
 
@@ -288,7 +283,7 @@ style "murrine-tooltips" {
 	bg[NORMAL] = @tooltip_bg_color
 	bg[SELECTED] = @tooltip_bg_color
 
-	fg[NORMAL] = @tooltip_fg_color
+	fg[NORMAL] = @text_color
 
 	engine "murrine" {
 		textstyle = 0
@@ -303,13 +298,15 @@ style "murrine-spinbutton" = "murrine-button" {
 }
 
 style "murrine-radiocheck" = "murrine-default" {
-	bg[SELECTED] = @base_color
+	bg[SELECTED] = @bg_color
 
 	text[NORMAL] = @selected_bg_color
 	text[PRELIGHT] = @selected_bg_color
 }
 
 style "murrine-entry" = "murrine-wider" {
+        bg[SELECTED] = @selected_bg_color
+
 	engine "murrine" {
 		border_shades = { 1.15, 1.15 }
 	}
@@ -319,7 +316,9 @@ style "metacity-frame" = "murrine-default" {
 	bg[SELECTED] = @selected_bg_color
 }
 
-style "murrine-statusbar" { }
+style "murrine-statusbar" { 
+  bg[NORMAL] = shade(1.10, @bg_color)
+}
 style "murrine-comboboxentry" = "murrine-entry" { }
 style "murrine-hscale" = "murrine-scale" { }
 style "murrine-vscale" = "murrine-scale" { }
@@ -452,29 +451,29 @@ widget_class "*Toolbar*.*Separator*" style "murrine-toolbar"
 style "murrine-panel" = "murrine-thin" {
 	xthickness = 2
 
-	bg[NORMAL] = @panel_bg_color
-	bg[PRELIGHT] =  mix (0.21, @panel_fg_color, @panel_bg_color)
-	bg[SELECTED] =  mix (0.21, @panel_fg_color, @panel_bg_color)
-	bg[ACTIVE] = shade (0.8, @panel_bg_color)
-	bg[INSENSITIVE] = @panel_bg_color
+	bg[NORMAL] = @menu_bg_color
+	bg[PRELIGHT] =  shade(0.8, @selected_bg_color)
+	bg[SELECTED] =  @selected_bg_color
+	bg[ACTIVE] = @selected_bg_color
+	bg[INSENSITIVE] = @menu_bg_color
 
-	fg[NORMAL] = @panel_fg_color
-	fg[PRELIGHT] = shade (1.08, @panel_fg_color)
-	fg[SELECTED] = shade (1.08, @panel_fg_color)
-	fg[ACTIVE] = @panel_fg_color
-	fg[INSENSITIVE] = mix (0.5, @panel_bg_color, @panel_fg_color)
+	fg[NORMAL] = @text_color
+	fg[PRELIGHT] = @text_color
+	fg[SELECTED] = @text_color
+	fg[ACTIVE] = @text_color
+	fg[INSENSITIVE] = shade(0.8, @text_color)
 
-	base[NORMAL] = @panel_bg_color
-	base[PRELIGHT] =  mix (0.21, @panel_fg_color, @panel_bg_color)
-	base[SELECTED] =  mix (0.21, @panel_fg_color, @panel_bg_color)
-	base[ACTIVE] = shade (0.9, @panel_bg_color)
-	base[INSENSITIVE] = @panel_bg_color
+	base[NORMAL] = @menu_bg_color
+	base[PRELIGHT] =  mix (0.21, @text_color, @menu_bg_color)
+	base[SELECTED] =  @selected_bg_color
+	base[ACTIVE] = @selected_bg_color
+	base[INSENSITIVE] = @menu_bg_color
 
-	text[NORMAL] = @panel_fg_color
-	text[PRELIGHT] = shade (1.08, @panel_fg_color)
-	text[SELECTED] = shade (1.08, @panel_fg_color)
-	text[ACTIVE] = @panel_fg_color
-	text[INSENSITIVE] = mix (0.5, @panel_bg_color, @panel_fg_color)
+	text[NORMAL] = @text_color
+	text[PRELIGHT] = shade (1.08, @text_color)
+	text[SELECTED] = shade (1.08, @text_color)
+	text[ACTIVE] = @text_color
+	text[INSENSITIVE] = mix (0.5, @menu_bg_color, @text_color)
 
 	engine "murrine" {
 		roundness = 0
@@ -525,9 +524,9 @@ style "xfce-header" {
 }
 
 style "xfdesktop-windowlist" {
-	bg[NORMAL] = @base_color
-	fg[INSENSITIVE] = shade (0.95, @base_color)
-	text[INSENSITIVE] = shade (0.95, @base_color)
+	bg[NORMAL] = @bg_color
+	fg[INSENSITIVE] = shade (0.95, @bg_color)
+	text[INSENSITIVE] = shade (0.95, @bg_color)
 }
 
 style "xfdesktop-icon-view" {
@@ -593,10 +592,10 @@ class "*Xfce*Panel*" style "murrine-panel"
 # Thunar Styles
 
 style "sidepane" {
-	base[NORMAL] = @bg_color
-	base[INSENSITIVE] = mix (0.4, shade (1.35, @selected_bg_color), shade (0.9, @base_color))
-	bg[NORMAL] = @bg_color
-	text[NORMAL] = mix (0.9, @fg_color, @bg_color)
+	base[NORMAL] = shade(1.10, @bg_color)
+	base[INSENSITIVE] = shade(0.90, @bg_color)
+	bg[NORMAL] = shade(1.05, @bg_color)
+	text[NORMAL] = @fg_color
 }
 
 widget_class "*ThunarShortcutsView*" style "sidepane"
