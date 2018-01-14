@@ -15,7 +15,7 @@ progressbar.vertical progress {
     min-width: 9px;
 }
 progressbar trough {
-    background-color: shade( @theme_selected_bg_color, 0.3);
+    background-color: shade( @theme_bg_color, 0.8);
 }
 progressbar progress {
     background-color: @theme_selected_bg_color;

@@ -29,7 +29,7 @@ check:checked,
 check:indeterminate,
 radio:checked,
 radio:indeterminate {
-    color: #448AFF;
+    color: shade(@theme_bg_color, 0.8);
 }
 check:checked:disabled,
 check:indeterminate:disabled,
@@ -64,7 +64,7 @@ check:indeterminate {
     -gtk-icon-source: image(-gtk-recolor(url("../assets/check-mixed.png")), -gtk-recolor(url("../assets/check-mixed.png")));
 }
 radio {
-    border-image: -gtk-gradient(radial, center center, 0, center center, 0.001, to(#448AFF), to(transparent)) 24/24px;
+    border-image: -gtk-gradient(radial, center center, 0, center center, 0.001, to(@theme_selected_bg_color), to(transparent)) 24/24px;
     -gtk-icon-source: image(-gtk-recolor(url("../assets/blank.png")), -gtk-recolor(url("../assets/blank.png")));
 }
 radio:checked {
@@ -97,29 +97,29 @@ treeview.view radio:selected:checked:hover {
 }
 treeview.view check,
 treeview.view radio {
-    color: rgba(0, 0, 0, 0.6);
+    color: shade(@theme_selected_bg_color, 0.8);
 }
 treeview.view check:hover,
 treeview.view check:active,
 treeview.view radio:hover,
 treeview.view radio:active {
-    color: rgba(0, 0, 0, 0.8);
+    color: shade(@theme_selected_bg_color, 0.8);
 }
 treeview.view check:disabled,
 treeview.view radio:disabled {
-    color: rgba(0, 0, 0, 0.24);
+    color: shade(@theme_selected_bg_color, 0.8);
 }
 treeview.view check:checked,
 treeview.view check:indeterminate,
 treeview.view radio:checked,
 treeview.view radio:indeterminate {
-    color: #448AFF;
+    color: @theme_selected_bg_color;
 }
 treeview.view check:checked:disabled,
 treeview.view check:indeterminate:disabled,
 treeview.view radio:checked:disabled,
 treeview.view radio:indeterminate:disabled {
-    color: rgba(68, 138, 255, 0.4);
+    color: shade(@theme_selected_bg_color, 0.8);
 }
 treeview.view check:selected,
 treeview.view radio:selected {
@@ -145,7 +145,7 @@ treeview.view check:selected:checked:disabled,
 treeview.view check:selected:indeterminate:disabled,
 treeview.view radio:selected:checked:disabled,
 treeview.view radio:selected:indeterminate:disabled {
-    color: rgba(68, 138, 255, 0.4);
+    color: @theme_selected_fg_color;
 }
 treeview.view radio:checked {
     -gtk-icon-source: image(-gtk-recolor(url("../assets/radio-checked.png")), -gtk-recolor(url("assets/radio-checked.png")));

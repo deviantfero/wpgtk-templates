@@ -173,6 +173,9 @@ notebook > header.right tabs {
     padding-top: 8px;
     padding-bottom: 8px;
 }
+entry.chrome {
+    background-color: blue;
+}
 notebook > header.left tabs:not(:only-child):first-child,
 notebook > header.right tabs:not(:only-child):first-child {
     margin-top: 0;

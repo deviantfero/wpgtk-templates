@@ -48,7 +48,7 @@ GtkClutterOffscreen {
     color: @theme_selected_fg_color;
 }
 *:active {
-    background-color: shade(@theme_bg_color, 0.95);
+    background-color: shade(@theme_bg_color, 1.00);
 }
 *:disabled,
 *:disabled:disabled {
@@ -150,14 +150,14 @@ button.sidebar-button {
 placessidebar row.sidebar-placeholder-row {
     min-height: 2px;
     padding: 0 2px;
-    background-image: image(#448AFF);
+    background-color: @theme_selected_bg_color;
     background-clip: content-box;
 }
 placessidebar row.sidebar-new-bookmark-row {
-    color: #448AFF;
+    color: @theme_selected_bg_color;
 }
 placessidebar row:drop(active):not(:disabled) {
-    box-shadow: inset 0 0 0 2px #448AFF;
+    box-shadow: inset 0 0 0 2px @theme_selected_bg_color;
 }
 /****************
  * content view *
@@ -377,7 +377,7 @@ textview text:selected {
     background-color: @theme_selected_bg_color;
 }
 textview border {
-    background-color: #f6f7f8;
+    background-color: @theme_selected_bg_color;
     background-image: image(rgba(0, 0, 0, 0.1));
     background-repeat: no-repeat;
     color: rgba(0, 0, 0, 0.48);
@@ -507,7 +507,7 @@ treeview.view.separator {
 treeview.view:drop(active) {
     border-style: solid none;
     border-width: 1px;
-    border-color: #448AFF;
+    border-color: @theme_selected_bg_color;
 }
 treeview.view:drop(active).after {
     border-top-style: none;

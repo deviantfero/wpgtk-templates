@@ -6,7 +6,6 @@ menubar,
 .menubar {
     -GtkWidget-window-dragging: true;
     padding: 2px;
-    box-shadow: inset 0 10px rgba(0, 0, 0, 0.1);
     background-color: @theme_tooltip_bg_color;
 }
 menubar > menuitem,
@@ -104,6 +103,7 @@ menu > arrow:disabled,
 menu separator,
 .menu separator {
     margin: 4px 0;
+    background-color: transparent;
 }
 menuitem accelerator {
     color: alpha(currentColor, 0.6);

@@ -285,7 +285,7 @@ border-width: 1px;
 .header-bar .button.raised.linked:active,
 .header-bar .raised.linked .button:active,
 .header-bar .linked .button:active {
-    background-color: #32383E;
+    background-color: shade(@theme_bg_color, 1.1);
     color: @theme_fg_color;
 }
 .primary-toolbar .linked .button:active:hover,
@@ -297,7 +297,7 @@ border-width: 1px;
 .header-bar .button.raised.linked:active:hover,
 .header-bar .raised.linked .button:active:hover,
 .header-bar .linked .button:active:hover {
-    background-color: shade(#32383E, 1.08);
+    background-color: shade(@theme_bg_color, 1.1);
 }
 .primary-toolbar .linked .button:insensitive,
 .primary-toolbar .button.raised.linked:insensitive,

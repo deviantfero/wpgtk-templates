@@ -1,13 +1,13 @@
 
 /* Default color scheme */
-@define-color bg_color #1e1719;
-@define-color fg_color #fefed9;
-@define-color base_color #241C1E;
-@define-color text_color #fefed9;
-@define-color selected_bg_color #afa677;
-@define-color selected_fg_color #fefed9;
-@define-color tooltip_bg_color #2f2427;
-@define-color tooltip_fg_color #fefed9;
+@define-color bg_color shade(#4a3d54, 1.0);
+@define-color tooltip_bg_color shade(#4a3d54, 0.77);
+@define-color base_color #2f2736;
+@define-color fg_color #fefeee;
+@define-color text_color #fefeee;
+@define-color selected_bg_color #288ba0;
+@define-color selected_fg_color #fefeee;
+@define-color tooltip_fg_color #fefeee;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;
@@ -27,25 +27,25 @@
 @define-color info_fg_color @text_color;
 @define-color info_bg_color @bg_color;
 @define-color warning_fg_color @text_color;
-@define-color warning_bg_color #E6A682;
+@define-color warning_bg_color @bg_color;
 @define-color question_fg_color @text_color;
-@define-color question_bg_color #74C47B;
+@define-color question_bg_color @theme_selected_bg_color;
 @define-color error_fg_color @text_color;
-@define-color error_bg_color #E682C8;
+@define-color error_bg_color #f52400;
 @define-color link_color mix (@theme_selected_bg_color, black, 0.15);
 @define-color success_color #53a93f;
 @define-color warning_color #f57900;
-@define-color error_color #C6B77D;
+@define-color error_color #f52400;
 
 /* widget colors*/
-@define-color border_color #363D43;
-@define-color button_normal_color #3F474A;
-@define-color button_info_color #72B279;
+@define-color border_color shade(@theme_selected_bg_color, 0.9);
+@define-color button_normal_color @border_color;
+@define-color button_info_color @thene_selected_bg_color;
 @define-color button_default_active_color shade(@theme_selected_bg_color, 0.857);
 @define-color entry_border_color shade(@theme_base_color, 0.9);
-@define-color frame_border_bottom_color #E3E4E7;
-@define-color sel_color #B98CD7;
-@define-color switch_bg_color #C9CBCF;
+@define-color frame_border_bottom_color shade(@bg_color, 0.8);
+@define-color sel_color shade(@theme_selected_bg_color, 0.857);
+@define-color switch_bg_color shade(@bg_color, 0.8);
 @define-color panel_bg_color @bg_color;
 @define-color panel_fg_color @fg_color;
 @define-color borders shade(@theme_selected_bg_color, 0.857);

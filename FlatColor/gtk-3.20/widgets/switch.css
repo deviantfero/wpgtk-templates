@@ -32,7 +32,7 @@ switch slider {
     min-height: 24px;
     margin: -4px 0 -4px -4px;
     -gtk-outline-radius: 100px;
-    border-radius: 100px;
+    border-radius: 400px;
     background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(transparent), to(transparent));
 }
 switch:hover slider {
@@ -41,7 +41,7 @@ switch:hover slider {
 }
 switch:disabled slider {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    background-color: #f6f7f8;
+    background-color: shade(@theme_bg_color,  0.8);
     color: rgba(0, 0, 0, 0.32);
 }
 switch:checked slider {

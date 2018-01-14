@@ -1,9 +1,9 @@
 UnityPanelWidget,
 .unity-panel {
-    border-width: 0 0 1px 0;
+    border-width: 0 0 0px 0;
     border-style: solid;
-    border-color: #363D43;
-    background-color: #363D43;
+    border-color: @theme_bg_color;
+    background-color: @theme_bg_color;
     background-image: none;
     color: @theme_selected_fg_color;
 }
@@ -48,7 +48,7 @@ UnityDecoration.top:backdrop {
 	border: 0px solid @theme_bg_color;
 	border-bottom-width: 0;
 	background-color: @theme_bg_color;
-	color: #999999;
+	color: @theme_fg_color;
 }
 
 /* Left decoration, it themes only the space at the left of the window */
