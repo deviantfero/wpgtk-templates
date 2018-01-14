@@ -1,7 +1,7 @@
 
 /* Default color scheme */
-@define-color bg_color shade(#COLOR8, 1.0);
-@define-color tooltip_bg_color shade(#COLOR8, 0.77);
+@define-color bg_color shade(#COLOR8, 0.77);
+@define-color tooltip_bg_color #COLOR8;
 @define-color base_color #COLOR0;
 @define-color fg_color #COLORX15;
 @define-color text_color #COLORX15;

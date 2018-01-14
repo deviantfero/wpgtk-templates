@@ -1,24 +1,24 @@
 #modded Numix gtkrc
 
-gtk-color-scheme = "bg_color:#2f2736
-fg_color:#fefeee
-text_color:#fefeee
-selected_bg_color:#288ba0
-selected_fg_color:#fefeee
-tooltip_bg_color:#4a3d54
-tooltip_fg_color:#fefeee
-titlebar_bg_color:#4a3d54
-titlebar_fg_color:#fefeee
-menubar_bg_color:#4a3d54
-menubar_fg_color:#fefeee
-menu_bg_color:#4a3d54
-menu_fg_color:#fefeee
-link_color:#288ba0"
+gtk-color-scheme = "bg_color:#2a232a
+fg_color:#eafef3
+text_color:#eafef3
+selected_bg_color:#87afaf
+selected_fg_color:#eafef3
+tooltip_bg_color:#3d333d
+tooltip_fg_color:#eafef3
+titlebar_bg_color:#3d333d
+titlebar_fg_color:#eafef3
+menubar_bg_color:#3d333d
+menubar_fg_color:#eafef3
+menu_bg_color:#3d333d
+menu_fg_color:#eafef3
+link_color:#87afaf"
 gtk-auto-mnemonics	= 1
 
 # Default Style
 # DO --NOT-- CHANGE ACTIVE
-# IT's THE COLOR THAT WPGTK 43ecfeES
+# IT's THE COLOR THAT WPGTK c3fefeES
 # FEEL FREE TO MODIFY EVERYTHING ELSE IN gtkrc.base
 
 style "murrine-default" {
@@ -124,7 +124,7 @@ style "murrine-default" {
 	bg[ACTIVE] = shade (0.9, @bg_color)
 	bg[INSENSITIVE] = @bg_color
 
-	base[NORMAL] = shade(0.93, @bg_color)
+	base[NORMAL] = shade(0.90, @bg_color)
 	base[PRELIGHT] = shade (0.90, @bg_color)
 	base[SELECTED] = @selected_bg_color
 	base[ACTIVE] = @selected_bg_color
