@@ -9,37 +9,37 @@
 .inline-toolbar.toolbar .button,
 .inline-toolbar.toolbar GtkToolButton .button,
 .inline-toolbar.toolbar GtkToolButton > .button {
-    background-color: @theme_base_color;
-    color: @theme_text_color;
+    background-color: @base_color;
+    color: @text_color;
 
 }
 .linked .button:hover,
 .inline-toolbar.toolbar .button:hover,
 .inline-toolbar.toolbar GtkToolButton .button:hover,
 .inline-toolbar.toolbar GtkToolButton > .button:hover {
-    background-color: @theme_base_color;
-    color: shade(@theme_fg_color, 0.7);
+    background-color: @base_color;
+    color: shade(@fg_color, 0.7);
 }
 .linked .button:active,
 .inline-toolbar.toolbar .button:active,
 .inline-toolbar.toolbar GtkToolButton .button:active,
 .inline-toolbar.toolbar GtkToolButton > .button:active {
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
 }
 .linked .button:active:hover,
 .inline-toolbar.toolbar .button:active:hover,
 .inline-toolbar.toolbar GtkToolButton .button:active:hover,
 .inline-toolbar.toolbar GtkToolButton > .button:active:hover {
-    background-color: shade(@theme_selected_bg_color, 1.05);
+    background-color: shade(@selected_bg_color, 1.05);
 }
 .linked .button:insensitive,
 .inline-toolbar.toolbar .button:insensitive,
 .inline-toolbar.toolbar GtkToolButton .button:insensitive,
 .inline-toolbar.toolbar GtkToolButton > .button:insensitive {
-    background-color: shade(@theme_bg_color, 1.04);
+    background-color: shade(@bg_color, 1.04);
     background-image: none;
-    color: mix(@theme_text_color, @theme_base_color, 0.4);
+    color: mix(@text_color, @base_color, 0.4);
 }
 
 /* remove box shadow from last-child and only-child */
@@ -147,33 +147,33 @@
 .linked.vertical .button,
 .inline-toolbar.toolbar.vertical .button,
 .inline-toolbar.toolbar.vertical GtkToolButton > .button {
-    background-color: @theme_base_color;
-    color: @theme_text_color;
+    background-color: @base_color;
+    color: @text_color;
 }
 
 .linked.vertical .button:active,
 .inline-toolbar.toolbar.vertical .button:active,
 .inline-toolbar.toolbar.vertical GtkToolButton > .button:active {
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
 }
 .linked.vertical .button:hover,
 .inline-toolbar.toolbar.vertical .button:hover,
 .inline-toolbar.toolbar.vertical GtkToolButton > .button:hover {
-    background-color: @theme_base_color;
-    color: shade(@theme_fg_color, 0.7);
+    background-color: @base_color;
+    color: shade(@fg_color, 0.7);
 }
 .linked.vertical .button:active:hover,
 .inline-toolbar.toolbar.vertical .button:active:hover,
 .inline-toolbar.toolbar.vertical GtkToolButton > .button:active:hover {
-    background-color: shade(@theme_selected_bg_color, 1.05);
+    background-color: shade(@selected_bg_color, 1.05);
 }
 .linked.vertical .button:insensitive,
 .inline-toolbar.toolbar.vertical .button:insensitive,
 .inline-toolbar.toolbar.vertical GtkToolButton > .button:insensitive {
-    background-color: shade(@theme_bg_color, 1.04);
+    background-color: shade(@bg_color, 1.04);
     background-image: none;
-    color: mix(@theme_text_color, @theme_base_color, 0.4);
+    color: mix(@text_color, @base_color, 0.4);
 }
 
 /* remove box shadow from last-child and only-child */
@@ -261,8 +261,8 @@ border-width: 1px;
 .header-bar .button.raised.linked,
 .header-bar .raised.linked .button,
 .header-bar .linked .button {
-    background-color: @theme_base_color;
-    color: @theme_text_color;
+    background-color: @base_color;
+    color: @text_color;
 }
 .primary-toolbar .linked .button:hover,
 .primary-toolbar .button.raised.linked:hover,
@@ -273,8 +273,8 @@ border-width: 1px;
 .header-bar .button.raised.linked:hover,
 .header-bar .raised.linked .button:hover,
 .header-bar .linked .button:hover {
-    background-color: @theme_base_color;
-    color: shade(@theme_fg_color, 0.7);
+    background-color: @base_color;
+    color: shade(@fg_color, 0.7);
 }
 .primary-toolbar .linked .button:active,
 .primary-toolbar .button.raised.linked:active,
@@ -285,8 +285,8 @@ border-width: 1px;
 .header-bar .button.raised.linked:active,
 .header-bar .raised.linked .button:active,
 .header-bar .linked .button:active {
-    background-color: shade(@theme_bg_color, 1.1);
-    color: @theme_fg_color;
+    background-color: shade(@bg_color, 1.1);
+    color: @fg_color;
 }
 .primary-toolbar .linked .button:active:hover,
 .primary-toolbar .button.raised.linked:active:hover,
@@ -297,7 +297,7 @@ border-width: 1px;
 .header-bar .button.raised.linked:active:hover,
 .header-bar .raised.linked .button:active:hover,
 .header-bar .linked .button:active:hover {
-    background-color: shade(@theme_bg_color, 1.1);
+    background-color: shade(@bg_color, 1.1);
 }
 .primary-toolbar .linked .button:insensitive,
 .primary-toolbar .button.raised.linked:insensitive,
@@ -308,9 +308,9 @@ border-width: 1px;
 .header-bar .button.raised.linked:insensitive,
 .header-bar .raised.linked .button:insensitive,
 .header-bar .linked .button:insensitive {
-    background-color: shade(@theme_bg_color, 1.04);
+    background-color: shade(@bg_color, 1.04);
     background-image: none;
-    color: mix(@theme_text_color, @theme_base_color, 0.4);
+    color: mix(@text_color, @base_color, 0.4);
 }
 
 /* remove box shadow from last-child and only-child */

@@ -6,7 +6,7 @@ GtkColorSwatch:selected {
     border-width: 4px;
     border-style: solid;
     border-radius: 0;
-    border-color: @theme_bg_color;
+    border-color: @bg_color;
     background-color: transparent;
     transition: all 200ms ease-out;
 }
@@ -15,7 +15,7 @@ GtkColorSwatch:hover,
 GtkColorSwatch:selected:hover {
     border-width: 0;
     border-radius: 0;
-    border-color: @theme_bg_color;
+    border-color: @bg_color;
     transition: all 200ms ease-in;
 }
 
@@ -58,18 +58,18 @@ GtkColorChooserWidget #add-color-button {
     border-width: 1px;
     border-style: none;
     border-radius: 0;
-    background-color: @theme_base_color;
-    color: mix(@theme_text_color, @theme_base_color, 0.4);
+    background-color: @base_color;
+    color: mix(@text_color, @base_color, 0.4);
 }
 
 GtkColorChooserWidget #add-color-button:hover {
     transition: all 100ms ease-in;
-    border-color: @theme_selected_bg_color;
+    border-color: @selected_bg_color;
     border-width: 1px;
     border-style: none;
     border-radius: 0;
-    background-color: @theme_base_color;
-    color: @theme_fg_color;
+    background-color: @base_color;
+    color: @fg_color;
 }
 
 .color-active-badge,
@@ -96,7 +96,7 @@ GtkColorEditor GtkColorSwatch {
     border-width: 4px;
     border-style: solid;
     border-radius: 0;
-    border-color: @theme_bg_color;
+    border-color: @bg_color;
     background-color: transparent;
     transition: all 200ms ease-out;
 }
@@ -105,7 +105,7 @@ GtkColorEditor GtkColorSwatch.color-dark:hover,
 GtkColorEditor GtkColorSwatch.color-light:hover {
     border-width: 0;
     border-radius: 0;
-    border-color: @theme_bg_color;
+    border-color: @bg_color;
     transition: all 200ms ease-in;
 }
 

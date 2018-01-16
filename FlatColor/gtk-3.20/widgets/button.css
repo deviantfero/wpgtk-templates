@@ -8,57 +8,32 @@ button {
     border-style: solid;
     border-color: transparent;
     border-radius: 0px;
-    background-color: shade(@tooltip_bg_color, 1.30);
+    background-color: shade(@color8, 1.15);
     background-image: none;
-    color: @theme_text_color;
+    color: @text_color;
 }
 
 button:hover {
-    background-color: shade( @theme_selected_bg_color, 0.9 );
-    color: @theme_fg_color;
+    background-color: shade(@selected_bg_color, 0.9);
+    color: @fg_color;
 }
 
 button:active,
 button:active:hover {
-    color: @theme_fg_color;
-    background-color: shade(@theme_selected_bg_color, 0.83);
+    color: @fg_color;
+    background-color: shade(@selected_bg_color, 0.83);
 }
 
 button:disabled {
-    background-color: mix(@theme_bg_color, #fff, 0.01);
+    background-color: mix(@color8, @color0, 0.40);
     background-image: none;
-    color: mix(@theme_text_color, @theme_base_color, 0.4);
-}
-button *:disabled {
-    color: mix(@theme_text_color, #fff, 0.01);
+    color: mix(@text_color, @color0, 0.40);
 }
 
 button:active:disabled {
 
 }
 
-/* default button */
-button.default,
-button.default:focus {
-    border-color: transparent;
-    background-color: @theme_selected_bg_color;
-    color: @theme_fg_color;
-}
-
-button.default:hover {
-    background-color: shade(@theme_selected_bg_color, 1.05);
-}
-
-button.default:active,
-button.default:hover:active {
-    border-color: transparent;
-    background-color: mix(@button_default_active_color, white, 0.083);
-    color: shade(@theme_selected_fg_color, 0.95);
-}
-
-button.default *:disabled {
-    color: shade(@entry_border_color, 0.9);
-}
 GtkLinkButton.button,
 GtkLinkButton.button:focus,
 GtkLinkButton.button:hover,

@@ -6,7 +6,7 @@
     padding: 4px;
     border-width: 0;
     border-style: none;
-    background-color: @theme_bg_color;
+    background-color: @bg_color;
 }
 
 .header-bar .button.text-button {

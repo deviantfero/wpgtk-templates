@@ -5,8 +5,8 @@
 .background.osd {
     border-style: none;
     border-width: 0;
-    color: @theme_fg_color;
-    background-color: @theme_bg_color;
+    color: @fg_color;
+    background-color: @bg_color;
 }
 
 GtkOverlay.osd {
@@ -62,9 +62,9 @@ GtkOverlay.osd {
     border-width: 0;
     border-style: none;
     border-radius: 0;
-    background-color: @theme_bg_color;
+    background-color: @bg_color;
     background-image: none;
-    color: @theme_fg_color;
+    color: @fg_color;
 }
 
 .osd.toolbar .button {
@@ -166,7 +166,7 @@ GtkProgressBar.osd.trough {
 GtkProgressBar.osd.progressbar {
     border-style: none;
     border-radius: 0;    
-    background-color: @theme_selected_bg_color;
+    background-color: @selected_bg_color;
     background-image: none;
 }
 

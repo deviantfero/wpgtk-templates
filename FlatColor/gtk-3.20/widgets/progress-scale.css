@@ -3,7 +3,7 @@
  *****************/
 
 progressbar {
-    color: @theme_selected_fg_color;
+    color: @selected_fg_color;
     font-size: smaller;
 }
 progressbar.horizontal trough,
@@ -15,10 +15,10 @@ progressbar.vertical progress {
     min-width: 9px;
 }
 progressbar trough {
-    background-color: shade( @theme_bg_color, 0.8);
+    background-color: shade( @bg_color, 0.8);
 }
 progressbar progress {
-    background-color: @theme_selected_bg_color;
+    background-color: @selected_bg_color;
 }
 /*************
  * Level Bar *
@@ -38,12 +38,12 @@ levelbar trough {
     transition: all 0.3s cubic-bezier(0, 0, 0.2, 1), color 0;
     border-image: none;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    background-color: shade( @theme_bg_color, 0.9);
-    color: shade(@theme_bg_color, 0.8);
+    background-color: shade( @bg_color, 0.9);
+    color: shade(@bg_color, 0.8);
 }
 levelbar trough:disabled {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    background-color: shade( @theme_bg_color, 0.7);
+    background-color: shade( @bg_color, 0.7);
     color: rgba(0, 0, 0, 0.32);
 }
 levelbar.horizontal.discrete block {
@@ -59,16 +59,16 @@ levelbar.vertical.discrete trough {
     padding: 1px 2px;
 }
 levelbar block.low {
-    background-color: shade( @theme_selected_bg_color, 0.5);
+    background-color: shade( @selected_bg_color, 0.5);
 }
 levelbar block.high {
-    background-color: shade( @theme_selected_bg_color, 0.8);
+    background-color: shade( @selected_bg_color, 0.8);
 }
 levelbar block.full {
-    background-color: shade( @theme_selected_bg_color, 1.0);
+    background-color: shade( @selected_bg_color, 1.0);
 }
 levelbar block.empty {
-    background-color: alpha(@theme_selected_bg_color, 0.3);
+    background-color: alpha(@selected_bg_color, 0.3);
     color: rgba(0, 0, 0, 0.32);
 }
 /*scale*/
@@ -88,19 +88,19 @@ scale slider {
 }
 scale trough {
     outline-offset: 2px;
-    background-color: alpha(@theme_selected_bg_color, 0.3);
+    background-color: alpha(@selected_bg_color, 0.3);
 }
 scale trough:disabled {
     color: rgba(0, 0, 0, 0.32);
 }
 scale highlight {
-    background-color: @theme_selected_bg_color;
+    background-color: @selected_bg_color;
 }
 scale highlight:disabled {
     background-color: transparent;
 }
 scale fill {
-    background-color: alpha(@theme_selected_bg_color, 0.3);
+    background-color: alpha(@selected_bg_color, 0.3);
 }
 scale fill:disabled {
     background-color: transparent;
@@ -126,10 +126,10 @@ scale.fine-tune slider {
     background-size: calc(100% - 12px);
 }
 scale value {
-    color: alpha(@theme_selected_fg_color, 0.6);
+    color: alpha(@selected_fg_color, 0.6);
 }
 scale marks {
-    color: alpha(@theme_selected_fg_color, 0.3);
+    color: alpha(@selected_fg_color, 0.3);
 }
 scale marks.top {
     margin-bottom: 8px;

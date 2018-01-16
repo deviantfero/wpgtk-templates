@@ -1,13 +1,29 @@
 
 /* Default color scheme */
-@define-color bg_color shade(#COLOR8, 0.77);
-@define-color tooltip_bg_color #COLOR8;
-@define-color base_color #COLOR0;
-@define-color fg_color #COLORX15;
-@define-color text_color #COLORX15;
+@define-color color0 #COLOR0;
+@define-color color1 #COLOR1;
+@define-color color2 #COLOR2;
+@define-color color3 #COLOR3;
+@define-color color4 #COLOR4;
+@define-color color5 #COLOR5;
+@define-color color6 #COLOR6;
+@define-color color7 #COLOR7;
+@define-color color8 #COLOR8;
+@define-color color9 #COLOR9;
+@define-color color10 #COLORX10;
+@define-color color11 #COLORX11;
+@define-color color12 #COLORX12;
+@define-color color13 #COLORX13;
+@define-color color14 #COLORX14;
+@define-color color15 #COLORX15;
 @define-color selected_bg_color #COLORACT;
-@define-color selected_fg_color #COLORX15;
-@define-color tooltip_fg_color #COLORX15;
+@define-color bg_color @color8;
+@define-color tooltip_bg_color shade(@color0, 1.20);
+@define-color base_color mix(@color8, @color0, 1.2);
+@define-color fg_color @color15;
+@define-color text_color @color15;
+@define-color selected_fg_color @color15;
+@define-color tooltip_fg_color @color15;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;
@@ -38,10 +54,10 @@
 @define-color error_color #f52400;
 
 /* widget colors*/
-@define-color border_color shade(@theme_selected_bg_color, 0.9);
+@define-color border_color shade(@theme_selected_bg_color, 0.2);
 @define-color button_normal_color @border_color;
-@define-color button_info_color @thene_selected_bg_color;
-@define-color button_default_active_color shade(@theme_selected_bg_color, 0.857);
+@define-color button_info_color @theme_selected_bg_color;
+@define-color button_default_active_color @theme_selected_bg_color;
 @define-color entry_border_color shade(@theme_base_color, 0.9);
 @define-color frame_border_bottom_color shade(@bg_color, 0.8);
 @define-color sel_color shade(@theme_selected_bg_color, 0.857);

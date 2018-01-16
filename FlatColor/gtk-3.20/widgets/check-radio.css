@@ -17,25 +17,25 @@ check:active,
 radio:hover,
 radio:active {
     color: currentColor;
-    background-color: shade(@theme_selected_bg_color, 0.3);
+    background-color: shade(@selected_bg_color, 0.3);
 }
 check:checked,
 check:checked:disabled,
 radio:checked,
 radio:checked:disabled {
-    background-color: shade(@theme_selected_bg_color, 0.9);
+    background-color: shade(@selected_bg_color, 0.9);
 }
 check:checked,
 check:indeterminate,
 radio:checked,
 radio:indeterminate {
-    color: shade(@theme_bg_color, 0.8);
+    color: shade(@bg_color, 0.8);
 }
 check:checked:disabled,
 check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
-    color: shade(@theme_bg_color, 0.4);
+    color: shade(@bg_color, 0.4);
 }
 check:only-child,
 radio:only-child {} menu menuitem check,
@@ -64,7 +64,7 @@ check:indeterminate {
     -gtk-icon-source: image(-gtk-recolor(url("../assets/check-mixed.png")), -gtk-recolor(url("../assets/check-mixed.png")));
 }
 radio {
-    border-image: -gtk-gradient(radial, center center, 0, center center, 0.001, to(@theme_selected_bg_color), to(transparent)) 24/24px;
+    border-image: -gtk-gradient(radial, center center, 0, center center, 0.001, to(@selected_bg_color), to(transparent)) 24/24px;
     -gtk-icon-source: image(-gtk-recolor(url("../assets/blank.png")), -gtk-recolor(url("../assets/blank.png")));
 }
 radio:checked {
@@ -97,43 +97,43 @@ treeview.view radio:selected:checked:hover {
 }
 treeview.view check,
 treeview.view radio {
-    color: shade(@theme_selected_bg_color, 0.8);
+    color: shade(@selected_bg_color, 0.8);
 }
 treeview.view check:hover,
 treeview.view check:active,
 treeview.view radio:hover,
 treeview.view radio:active {
-    color: shade(@theme_selected_bg_color, 0.8);
+    color: shade(@selected_bg_color, 0.8);
 }
 treeview.view check:disabled,
 treeview.view radio:disabled {
-    color: shade(@theme_selected_bg_color, 0.8);
+    color: shade(@selected_bg_color, 0.8);
 }
 treeview.view check:checked,
 treeview.view check:indeterminate,
 treeview.view radio:checked,
 treeview.view radio:indeterminate {
-    color: @theme_selected_bg_color;
+    color: @selected_bg_color;
 }
 treeview.view check:checked:disabled,
 treeview.view check:indeterminate:disabled,
 treeview.view radio:checked:disabled,
 treeview.view radio:indeterminate:disabled {
-    color: shade(@theme_selected_bg_color, 0.8);
+    color: shade(@selected_bg_color, 0.8);
 }
 treeview.view check:selected,
 treeview.view radio:selected {
-    color: shade(@theme_fg_color, 0.75);
+    color: shade(@fg_color, 0.75);
 }
 treeview.view check:selected:hover,
 treeview.view check:selected:active,
 treeview.view radio:selected:hover,
 treeview.view radio:selected:active {
-    color: @theme_selected_fg_color;
+    color: @selected_fg_color;
 }
 treeview.view check:selected:disabled,
 treeview.view radio:selected:disabled {
-    color: shade(@theme_selected_fg_color, 0.3);
+    color: shade(@selected_fg_color, 0.3);
 }
 treeview.view check:selected:checked,
 treeview.view check:selected:indeterminate,
@@ -145,7 +145,7 @@ treeview.view check:selected:checked:disabled,
 treeview.view check:selected:indeterminate:disabled,
 treeview.view radio:selected:checked:disabled,
 treeview.view radio:selected:indeterminate:disabled {
-    color: @theme_selected_fg_color;
+    color: @selected_fg_color;
 }
 treeview.view radio:checked {
     -gtk-icon-source: image(-gtk-recolor(url("../assets/radio-checked.png")), -gtk-recolor(url("assets/radio-checked.png")));

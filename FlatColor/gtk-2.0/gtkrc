@@ -1,7 +1,22 @@
 #modded Numix gtkrc
 
-gtk-color-scheme = "bg_color:#2a232a
-fg_color:#eafef3
+gtk-color-scheme = "bg_color:#3d333d
+color0:#2a232a
+color1:#BFC2B5
+color2:#9AA6A8
+color3:#BBC5C5
+color4:#75D88A
+color5:#6f959c
+color6:#ABB6B6
+color7:#d3efdb
+color8:#3d333d
+color9:#fefecd
+color10:#b4e8f1
+color11:#d3fefe
+color12:#82fea6
+color13:#86d9e8
+color14:#c4fefe
+color15:#eafef3
 text_color:#eafef3
 selected_bg_color:#87afaf
 selected_fg_color:#eafef3
@@ -9,8 +24,6 @@ tooltip_bg_color:#3d333d
 tooltip_fg_color:#eafef3
 titlebar_bg_color:#3d333d
 titlebar_fg_color:#eafef3
-menubar_bg_color:#3d333d
-menubar_fg_color:#eafef3
 menu_bg_color:#3d333d
 menu_fg_color:#eafef3
 link_color:#87afaf"
@@ -112,11 +125,11 @@ style "murrine-default" {
 	xthickness = 1
 	ythickness = 1
 
-	fg[NORMAL] = @fg_color
-	fg[PRELIGHT] = @fg_color
+	fg[NORMAL] = @text_color
+	fg[PRELIGHT] = @text_color
 	fg[SELECTED] = @selected_fg_color
-	fg[ACTIVE] = @fg_color
-	fg[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
+	fg[ACTIVE] = @text_color
+	fg[INSENSITIVE] = mix (0.5, @bg_color, @text_color)
 
 	bg[NORMAL] = shade(1.10, @bg_color)
 	bg[PRELIGHT] = shade (1.02, @bg_color)
@@ -124,8 +137,8 @@ style "murrine-default" {
 	bg[ACTIVE] = shade (0.9, @bg_color)
 	bg[INSENSITIVE] = @bg_color
 
-	base[NORMAL] = shade(0.90, @bg_color)
-	base[PRELIGHT] = shade (0.90, @bg_color)
+	base[NORMAL] = shade(0.90, @color0)
+	base[PRELIGHT] = shade (0.90, @color0)
 	base[SELECTED] = @selected_bg_color
 	base[ACTIVE] = @selected_bg_color
 	base[INSENSITIVE] = shade (0.80, @bg_color)
@@ -212,7 +225,7 @@ style "murrine-button"  = "murrine-wider" {
 
 style "murrine-scrollbar" {
 	bg[NORMAL] = @bg_color
-	bg[PRELIGHT] = mix (0.31, @fg_color, @bg_color)
+	bg[PRELIGHT] = mix (0.31, @text_color, @bg_color)
 	bg[ACTIVE] = @selected_bg_color
 
 	engine "murrine" {
@@ -273,7 +286,7 @@ style "murrine-treeview" {
 }
 
 style "murrine-frame-title" {
-	fg[NORMAL] = lighter (@fg_color)
+	fg[NORMAL] = lighter (@text_color)
 }
 
 style "murrine-tooltips" {
@@ -371,17 +384,17 @@ style "murrine-menu-item" = "murrine-wider" {
 style "murrine-separator-menu-item" = "murrine-thin" { }
 
 style "murrine-menubar" {
-	bg[NORMAL] = @menubar_bg_color
-	bg[PRELIGHT] =  mix (0.21, @menubar_fg_color, @menubar_bg_color)
-	bg[SELECTED] =  mix (0.21, @menubar_fg_color, @menubar_bg_color)
-	bg[ACTIVE] = shade (0.9, @menubar_bg_color)
-	bg[INSENSITIVE] = @menubar_bg_color
+	bg[NORMAL] = @bg_color
+	bg[PRELIGHT] =  mix (0.21, @text_color, @bg_color)
+	bg[SELECTED] =  mix (0.21, @text_color, @bg_color)
+	bg[ACTIVE] = shade (0.9, @bg_color)
+	bg[INSENSITIVE] = @bg_color
 
-	fg[NORMAL] = @menubar_fg_color
-	fg[PRELIGHT] = shade (1.08, @menubar_fg_color)
-	fg[SELECTED] = shade (1.08, @menubar_fg_color)
-	fg[ACTIVE] = @menubar_fg_color
-	fg[INSENSITIVE] = mix (0.5, @menubar_bg_color, @menubar_fg_color)
+	fg[NORMAL] = @text_color
+	fg[PRELIGHT] = shade (1.08, @text_color)
+	fg[SELECTED] = shade (1.08, @text_color)
+	fg[ACTIVE] = @text_color
+	fg[INSENSITIVE] = mix (0.5, @bg_color, @text_color)
 
 	engine "murrine" {
 		roundness = 0
@@ -389,17 +402,17 @@ style "murrine-menubar" {
 }
 
 style "murrine-menubaritem" {
-	bg[NORMAL] = @menubar_bg_color
+	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] =  @selected_bg_color
 	bg[SELECTED] =  @selected_bg_color
-	bg[ACTIVE] = shade (0.9, @menubar_bg_color)
-	bg[INSENSITIVE] = @menubar_bg_color
+	bg[ACTIVE] = shade (0.9, @bg_color)
+	bg[INSENSITIVE] = @bg_color
 
-	fg[NORMAL] = @menubar_fg_color
-	fg[PRELIGHT] = shade (1.08, @menubar_fg_color)
-	fg[SELECTED] = shade (1.08, @menubar_fg_color)
-	fg[ACTIVE] = @menubar_fg_color
-	fg[INSENSITIVE] = mix (0.5, @menubar_bg_color, @menubar_fg_color)
+	fg[NORMAL] = @text_color
+	fg[PRELIGHT] = shade (1.08, @text_color)
+	fg[SELECTED] = shade (1.08, @text_color)
+	fg[ACTIVE] = @text_color
+	fg[INSENSITIVE] = mix (0.5, @bg_color, @text_color)
 
 	engine "murrine" {
 		roundness = 0
@@ -415,11 +428,11 @@ style "murrine-toolbar" = "murrine-thin" {
 	bg[ACTIVE] = shade (0.9, @bg_color)
 	bg[INSENSITIVE] = @bg_color
 
-	fg[NORMAL] = @fg_color
-	fg[PRELIGHT] = @fg_color
+	fg[NORMAL] = @text_color
+	fg[PRELIGHT] = @text_color
 	fg[SELECTED] = @selected_fg_color
-	fg[ACTIVE] = @fg_color
-	fg[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
+	fg[ACTIVE] = @text_color
+	fg[INSENSITIVE] = mix (0.5, @bg_color, @text_color)
 
 	engine "murrine" {
 	}
@@ -432,11 +445,11 @@ style "murrine-toolbutton" = "murrine-button" {
 	bg[ACTIVE] = shade (0.95, @bg_color)
 	bg[INSENSITIVE] = shade (0.85, @bg_color)
 
-	fg[NORMAL] = @fg_color
-	fg[PRELIGHT] = @fg_color
+	fg[NORMAL] = @text_color
+	fg[PRELIGHT] = @text_color
 	fg[SELECTED] = @selected_fg_color
-	fg[ACTIVE] = @fg_color
-	fg[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
+	fg[ACTIVE] = @text_color
+	fg[INSENSITIVE] = mix (0.5, @bg_color, @text_color)
 
 	engine "murrine" {
 	}
@@ -595,7 +608,7 @@ style "sidepane" {
 	base[NORMAL] = shade(1.10, @bg_color)
 	base[INSENSITIVE] = shade(0.90, @bg_color)
 	bg[NORMAL] = shade(1.05, @bg_color)
-	text[NORMAL] = @fg_color
+	text[NORMAL] = @text_color
 }
 
 widget_class "*ThunarShortcutsView*" style "sidepane"
@@ -630,8 +643,8 @@ style "chrome-gtk-frame" {
 	ChromeGtkFrame::incognito-frame-gradient-color = @titlebar_bg_color
 
 	ChromeGtkFrame::scrollbar-trough-color = @bg_color
-	ChromeGtkFrame::scrollbar-slider-normal-color =  mix (0.21, @fg_color, @bg_color)
-	ChromeGtkFrame::scrollbar-slider-prelight-color =  mix (0.31, @fg_color, @bg_color)
+	ChromeGtkFrame::scrollbar-slider-normal-color =  mix (0.21, @text_color, @bg_color)
+	ChromeGtkFrame::scrollbar-slider-prelight-color =  mix (0.31, @text_color, @bg_color)
 }
 
 class "ChromeGtkFrame" style "chrome-gtk-frame"
@@ -705,10 +718,10 @@ widget_class "*<GtkScrolledWindow>*<OsScrollbar>" style "murrine-overlay-scrollb
 
 style "text-is-fg-color-workaround" {
 	text[NORMAL] = @text_color
-	text[PRELIGHT] = @fg_color
+	text[PRELIGHT] = @text_color
 	text[SELECTED] = @selected_fg_color
-	text[ACTIVE] = @fg_color
-	text[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
+	text[ACTIVE] = @text_color
+	text[INSENSITIVE] = mix (0.5, @bg_color, @text_color)
 }
 
 widget_class "*.<GtkComboBox>.<GtkCellView>" style "text-is-fg-color-workaround"
@@ -718,7 +731,7 @@ style "fg-is-text-color-workaround" {
 	fg[PRELIGHT] = @text_color
 	fg[ACTIVE] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
-	fg[INSENSITIVE] = darker (@fg_color)
+	fg[INSENSITIVE] = darker (@text_color)
 }
 
 widget_class "*<GtkListItem>*" style "fg-is-text-color-workaround"

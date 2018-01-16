@@ -41,12 +41,12 @@ column-header.button,
 column-header .button,
 column-header.button:focus,
 column-header .button:focus {
-    background-color: @theme_tooltip_bg_color;
-    color: shade(@theme_text_color, 1.1);
+    background-color: @tooltip_bg_color;
+    color: shade(@text_color, 1.1);
 }
 column-header.button:active,
 column-header .button:active,
 column-header.button:active:focus,
 column-header .button:active:focus {
-    background-color: @theme_tooltip_bg_color;
+    background-color: @tooltip_bg_color;
 }

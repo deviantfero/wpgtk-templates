@@ -18,7 +18,7 @@ combobox .menu menuitem {
 	padding: 0 10px; 
 }
 combobox menu menuitem:hover {
-	background-color: @theme_selected_bg_color;
+	background-color: @selected_bg_color;
 }
 
 combobox:drop(active) {

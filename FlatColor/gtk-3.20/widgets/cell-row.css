@@ -8,8 +8,8 @@
 
 .cell:selected,
 .cell:selected:focus {
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
 }
 
 row:selected,
@@ -18,8 +18,8 @@ row:selected:focus {
     border-width: 0;
     border-style: none;
     border-radius: 0;
-    background-color: @theme_selected_bg_color;
+    background-color: @selected_bg_color;
     background-image: none;
-    color: @theme_selected_fg_color;
+    color: @selected_fg_color;
 
 }

@@ -116,5 +116,5 @@
 
 .menu.spinner,
 .primary-toolbar .spinner {
-    color: @theme_selected_bg_color;
+    color: @selected_bg_color;
 }
