@@ -183,5 +183,5 @@ for_window [class = "Wpg"] floating enable
 # exec --no-startup-id "setxkbmap -option caps:escape"
 # exec --no-startup-id exec volumeicon
 # exec --no-startup-id exec compton
-exec --no-startup-id ~/.wallpapers/wp_init.sh 
+exec --no-startup-id ~/.config/wpg/wp_init.sh 
 # exec_always --no-startup-id exec ~/Code/scripts/polybar.sh
