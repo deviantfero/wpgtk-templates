@@ -6,9 +6,12 @@ set $mod Mod4
 set $alt Mod1
 set $coloract "#COLORACT"
 set $colorin "#COLORIN"
-set_from_resource $white i3wm.color15 "#COLORX15"
+set $terminal urxvtc
+set_from_resource $color15 i3wm.color15 "#COLORX15"
 set_from_resource $split i3wm.color10 "#COLORX10"
 set_from_resource $coloru i3wm.color2 "#COLOR2"
+set_from_resource $color0 i3wm.color0 "#COLOR0"
+set_from_resource $color8 i3wm.color8 "#COLOR8"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -18,18 +21,21 @@ gaps outer 0
 gaps inner 8
 new_window pixel 3
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+######### COLORS ##########
+#
+# class                 border    backgr    text    indicator child_border
+client.focused          $coloract $coloract $color15 $split  $coloract
+client.focused_inactive $coloract $coloract $color15 $split  $coloract
+client.unfocused        $colorin  $colorin  $color15  $split  $colorin
+client.urgent           $coloru   $coloru   $color15 $coloru $coloru
+client.placeholder      $color0   $color8   $color15 $color0 $color8
+client.background       $color0
+
+
+###### KEYBINDINGS #######
+
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+t exec i3-sensible-terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
-# kill focused window
-bindsym $alt+F4 kill
-
-# start dmenu (a program launcher)
-bindsym $alt+F2 exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -55,22 +61,21 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# split in horizontal and vertical orientation
 bindsym $mod+s split v
-
-# split in vertical orientation
 bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+c fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
 bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+s layout stacked
 bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+o sticky toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -78,27 +83,25 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+p focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-#
+###### EXECUTE PROGRAMS ######
 
-# exec keybindings
+bindsym $mod+f       exec thunar
+bindsym $mod+Shift+f exec urxvt -name fexplorer -e ranger
+bindsym $mod+w       exec qutebrowser
+bindsym $mod+m       exec urxvt -name music -e ncmpcpp
+bindsym $mod+$alt+t  exec wpg -m
+bindsym $alt+Tab     exec rofi -show window
+bindsym $mod+t       exec $terminal
+bindsym $mod+Return  exec $terminal
+bindsym $alt+F4      kill
+bindsym $alt+F2      exec rofi -show run
+
 bindsym --release Print exec scrot
 bindsym --release Shift+Print exec scrot -s
-bindsym $mod+f exec thunar
-bindsym $mod+w exec google-chrome-stable
-bindsym $mod+m exec urxvt -e ncmpcpp
-bindsym $mod+$alt+t exec wpg -m
-bindsym $alt+Tab exec rofi -show window
 
-# class                 border    backgr.   text    indicator child_border
-client.focused          $coloract $coloract $white  $split $coloract
-client.focused_inactive $coloract $coloract $white  $split $coloract
-client.unfocused        $colorin  $colorin  #888888 $split $colorin
-client.urgent           $coloru   $coloru   $white  $coloru $coloru
-client.placeholder      #000000   #0c0c0c   $white  #000000 #0c0c0c
+# scratchpad terminal
+bindsym $mod+u [instance = "dropdown"] scratchpad show
 
-client.background       #ffffff
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -131,32 +134,33 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
+        # resize windows
         bindsym l resize shrink width 30 px or 10 ppt
         bindsym j resize grow height 30 px or 10 ppt
         bindsym k resize shrink height 30 px or 10 ppt
         bindsym h resize grow width 30 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        # move windows
+        bindsym Shift+l move right 30
+        bindsym Shift+j move down 30
+        bindsym Shift+k move up 30
+        bindsym Shift+h move left 30
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 mode "monitor" {
+        # toggle thinkpad modes
         bindsym s exec dock-single
         bindsym d exec dock-dual
         bindsym t exec thinkpad
 
-        # back to normal: Enter or Escape
+        bindsym h move workspace to output left
+        bindsym l move workspace to output right
+
+
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -164,24 +168,39 @@ mode "monitor" {
 bindsym $mod+r mode "resize"
 bindsym $mod+a mode "monitor"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# i3 bar not present use polybar
 # bar {
 #         status_command i3status
 # }
 
-# window specific things
+
+##### WINDOWS ######
+
 assign [class = "Firefox"] 1
+assign [class = "qutebrowser"] 1
 assign [class = "Google-chrome"] 1
+assign [class = "DBeaver"] 3
 assign [class = "zoom"] 9
+assign [instance = "music"] 10
 
 for_window [class = "Firefox"] layout tabbed
 for_window [class = "Google-chrome"] layout tabbed
+for_window [class = "qutebrowser"] layout tabbed
 for_window [class = "Wpg"] floating enable
 
+for_window [instance = "dropdown"] move scratchpad
+for_window [instance = "dropdown"] floating enable
+for_window [instance = "music"] floating enable
+for_window [instance  = "fexplorer"] floating enable
 
-# exec --no-startup-id "setxkbmap -option caps:escape"
-# exec --no-startup-id exec volumeicon
-# exec --no-startup-id exec compton
-exec --no-startup-id ~/.config/wpg/wp_init.sh 
-# exec_always --no-startup-id exec ~/Code/scripts/polybar.sh
+
+###### STARTUP ######
+
+exec --no-startup-id ~/.config/wpg/wp_init.sh
+exec --no-startup-id "setxkbmap -option caps:escape"
+exec --no-startup-id volumeicon
+exec --no-startup-id compton
+exec --no-startup-id urxvtd
+exec --no-startup-id dockd --daemon
+exec --no-startup-id $terminal -name dropdown
+exec_always --no-startup-id ~/Code/scripts/polybar.sh
