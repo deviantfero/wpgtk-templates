@@ -197,10 +197,10 @@ for_window [instance  = "fexplorer"] floating enable
 ###### STARTUP ######
 
 exec --no-startup-id ~/.config/wpg/wp_init.sh
-exec --no-startup-id "setxkbmap -option caps:escape"
+# exec --no-startup-id "setxkbmap -option caps:escape"
 exec --no-startup-id volumeicon
 exec --no-startup-id compton
 exec --no-startup-id urxvtd
-exec --no-startup-id dockd --daemon
+# exec --no-startup-id dockd --daemon
 exec --no-startup-id $terminal -name dropdown
-exec_always --no-startup-id ~/Code/scripts/polybar.sh
+# exec_always --no-startup-id ~/Code/scripts/polybar.sh
