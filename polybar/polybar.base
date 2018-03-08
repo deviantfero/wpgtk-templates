@@ -1,6 +1,6 @@
 [colors]
 background = ${xrdb:color8:#<COLOR8>}
-foreground = ${xrdb:color15:#COLORX15}
+foreground = ${xrdb:color15:#<COLOR15>}
 active = #<COLORACT>
 inactive = #<COLORIN>
 highlight = ${xrdb:color2:#<COLOR6>}
