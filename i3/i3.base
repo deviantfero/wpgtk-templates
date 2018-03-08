@@ -4,14 +4,14 @@
 
 set $mod Mod4
 set $alt Mod1
-set $coloract "#COLORACT"
-set $colorin "#COLORIN"
+set $coloract "#<COLORACT>"
+set $colorin "#<COLORIN>"
 set $terminal urxvtc
-set_from_resource $color15 i3wm.color15 "#COLORX15"
-set_from_resource $split i3wm.color10 "#COLORX10"
-set_from_resource $coloru i3wm.color2 "#COLOR2"
-set_from_resource $color0 i3wm.color0 "#COLOR0"
-set_from_resource $color8 i3wm.color8 "#COLOR8"
+set_from_resource $color15 i3wm.color15 "#<COLOR15>"
+set_from_resource $split i3wm.color10 "#<COLOR10>"
+set_from_resource $coloru i3wm.color2 "#<COLOR2>"
+set_from_resource $color0 i3wm.color0 "#<COLOR0>"
+set_from_resource $color8 i3wm.color8 "#<COLOR8>"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -101,7 +101,6 @@ bindsym --release Shift+Print exec scrot -s
 
 # scratchpad terminal
 bindsym $mod+u [instance = "dropdown"] scratchpad show
-
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -198,9 +197,9 @@ for_window [instance  = "fexplorer"] floating enable
 
 exec --no-startup-id ~/.config/wpg/wp_init.sh
 # exec --no-startup-id "setxkbmap -option caps:escape"
-exec --no-startup-id volumeicon
-exec --no-startup-id compton
-exec --no-startup-id urxvtd
+# exec --no-startup-id volumeicon
+# exec --no-startup-id compton
+# exec --no-startup-id urxvtd
 # exec --no-startup-id dockd --daemon
-exec --no-startup-id $terminal -name dropdown
+# exec --no-startup-id $terminal -name dropdown
 # exec_always --no-startup-id ~/Code/scripts/polybar.sh

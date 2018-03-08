@@ -1,32 +1,32 @@
 #modded Numix gtkrc
 
-gtk-color-scheme = "bg_color:#COLOR8
-color0:#COLOR0
-color1:#COLOR1
-color2:#COLOR2
-color3:#COLOR3
-color4:#COLOR4
-color5:#COLOR5
-color6:#COLOR6
-color7:#COLOR7
-color8:#COLOR8
-color9:#COLOR9
-color10:#COLORX10
-color11:#COLORX11
-color12:#COLORX12
-color13:#COLORX13
-color14:#COLORX14
-color15:#COLORX15
-text_color:#COLORX15
-selected_bg_color:#COLORACT
-selected_fg_color:#COLORX15
-tooltip_bg_color:#COLOR8
-tooltip_fg_color:#COLORX15
-titlebar_bg_color:#COLOR8
-titlebar_fg_color:#COLORX15
-menu_bg_color:#COLOR8
-menu_fg_color:#COLORX15
-link_color:#COLORACT"
+gtk-color-scheme = "bg_color:#<COLOR8>
+color0:#<COLOR0>
+color1:#<COLOR1>
+color2:#<COLOR2>
+color3:#<COLOR3>
+color4:#<COLOR4>
+color5:#<COLOR5>
+color6:#<COLOR6>
+color7:#<COLOR7>
+color8:#<COLOR8>
+color9:#<COLOR9>
+color10:#<COLOR10>
+color11:#<COLOR11>
+color12:#<COLOR12>
+color13:#<COLOR13>
+color14:#<COLOR14>
+color15:#<COLOR15>
+text_color:#<COLOR15>
+selected_bg_color:#<COLORACT>
+selected_fg_color:#<COLOR15>
+tooltip_bg_color:#<COLOR8>
+tooltip_fg_color:#<COLOR15>
+titlebar_bg_color:#<COLOR8>
+titlebar_fg_color:#<COLOR15>
+menu_bg_color:#<COLOR8>
+menu_fg_color:#<COLOR15>
+link_color:#<COLORACT>"
 gtk-auto-mnemonics	= 1
 
 # Default Style
