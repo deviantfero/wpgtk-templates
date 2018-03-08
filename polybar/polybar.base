@@ -1,13 +1,13 @@
 [colors]
-background = ${xrdb:color8:#COLOR8}
+background = ${xrdb:color8:#<COLOR8>}
 foreground = ${xrdb:color15:#COLORX15}
-active = #COLORACT
-inactive = #COLORIN
-highlight = ${xrdb:color2:#COLOR6}
-error = ${xrdb:color9:#COLOR9}
+active = #<COLORACT>
+inactive = #<COLORIN>
+highlight = ${xrdb:color2:#<COLOR6>}
+error = ${xrdb:color9:#<COLOR9>}
 
 [bar/wpgtk]
-monitor = ${env:MONITOR}
+monitor = ${env:MONITOR:LVDS-1}
 width = 100%
 height = 24
 offset-y = 0%
@@ -143,7 +143,7 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = "%d/%m/%Y"
+date-alt = "%d/%m/%Y "
 
 time = %I:%M 
 time-alt = %I:%M %p 
@@ -154,7 +154,7 @@ format-background = ${colors.active}
 label = %date%%time%
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <label-volume> <ramp-volume>
 format-volume-padding = 1
@@ -177,7 +177,7 @@ battery = BAT0
 adapter = ADP1
 full-at = 100
 
-format-charging = <label-charging> <ramp-capacity> 
+format-charging = <label-charging> <animation-charging> 
 format-charging-padding = 1
 format-discharging-padding = 1
 format-discharging = <label-discharging> <ramp-capacity>
@@ -193,7 +193,12 @@ ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
+animation-charging-framerate = 500
+animation-charging-0 = 
+animation-charging-1 =  
+animation-charging-2 =  
+animation-charging-3 = 
+animation-charging-4 =  
 format-charging-background = ${colors.highlight}
 format-discharging-background = ${colors.active}
 
