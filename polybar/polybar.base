@@ -3,7 +3,7 @@ background = ${xrdb:color8:#<COLOR8>}
 foreground = ${xrdb:color15:#<COLOR15>}
 active = #<COLORACT>
 inactive = #<COLORIN>
-highlight = ${xrdb:color2:#<COLOR6>}
+highlight = ${xrdb:color2:#<COLOR2>}
 error = ${xrdb:color9:#<COLOR9>}
 
 [bar/wpgtk]
@@ -30,11 +30,11 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = menlo:fontformat=truetype:size=8;1
-font-1 = FontAwesome:style=Regular:size=12;2
+font-1 = FontAwesome:style=Regular:size=10;2
 
-modules-left = i3
-modules-center = xwindow
-modules-right =  volume wlan eth battery date
+modules-left = i3 xwindow
+modules-center = date
+modules-right =  volume wlan eth battery
 
 tray-position = none
 tray-padding = 10
@@ -43,9 +43,8 @@ tray-background = ${colors.inactive}
 [module/xwindow]
 type = internal/xwindow
 format-background = ${colors.active}
-format-foreground = ${colors.foreground}
 format-padding = 1
-label = %title:0:30:...%
+label = %title:0:25: ...%
 
 [module/bspwm]
 type = internal/bspwm
@@ -79,7 +78,7 @@ ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 9;
 ws-icon-3 = 10;
-ws-icon-default = 
+ws-icon-default = 
 
 label-mode-padding = 1
 label-mode-foreground = ${colors.foreground}
@@ -118,7 +117,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected-padding = 1
-format-connected = <label-connected> <ramp-signal>
+format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
 format-connected-background = ${colors.active}
 
@@ -132,31 +131,28 @@ type = internal/network
 interface = enp0s25
 interval = 3.0
 
-format-connected = <label-connected>
+format-connected =  <label-connected>
 format-connected-padding = 1
 format-connected-background = ${colors.active}
-label-connected = 
+label-connected = %local_ip%
 
 
 [module/date]
 type = internal/date
 interval = 5
 
-date =
-date-alt = "%d/%m/%Y "
-
-time = %I:%M 
-time-alt = %I:%M %p 
+date = "%d %b %Y, "
+time = %I:%M %p
 
 format-padding = 1
-format-background = ${colors.active}
+format-background = ${colors.background}
 
 label = %date%%time%
 
 [module/volume]
 type = internal/alsa
 
-format-volume = <label-volume> <ramp-volume>
+format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 1
 format-volume-background = ${colors.active}
 ramp-volume-0 = 
@@ -177,10 +173,10 @@ battery = BAT0
 adapter = ADP1
 full-at = 100
 
-format-charging = <label-charging> <animation-charging> 
+format-charging =   <animation-charging> <label-charging>
 format-charging-padding = 1
 format-discharging-padding = 1
-format-discharging = <label-discharging> <ramp-capacity>
+format-discharging = <ramp-capacity> <label-discharging>
 format-full = <label-full> <ramp-capacity>
 format-full-padding = 1
 format-full-background = ${colors.active}
