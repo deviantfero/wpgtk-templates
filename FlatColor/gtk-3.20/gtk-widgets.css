@@ -12,8 +12,8 @@
     -GtkScrolledWindow-scrollbar-spacing: 0;
     -GtkTextView-error-underline-color: @error_color;
     -GtkToolButton-icon-spacing: 6;
-    -GtkToolItemGroup-expander-size: 8;
-    -GtkTreeView-expander-size: 8;
+    -GtkToolItemGroup-expander-size: 10;
+    -GtkTreeView-expander-size: 10;
     -GtkWindow-resize-grip-height: 0;
     -GtkWindow-resize-grip-width: 0;
     -WnckTasklist-fade-overlay-rect: 0;
@@ -232,11 +232,26 @@ frame {
     border-style: solid;
     border-color: shade( @theme_bg_color, 1.2);
 }
+
+frame.border-groove,
+frame.border-ridge {
+    border-radius: 0;
+    border-width: 0px;
+    border-style: none;
+}
+
+frame.border-groove border,
+frame.border-ridge border {
+    border-radius: 0;
+    border-width: 3px;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.9);
+}
 /*******************
  * scrolled window *
  *******************/
 
-GtkScrolledWindow.frame {
+scrolledwindow.frame {
     border-radius: 0;
     border-width: 0;
     border-style: none;
@@ -244,7 +259,7 @@ GtkScrolledWindow.frame {
 /* avoid double borders when a viewport is 
  * packed into a GtkScrolledWindow */
 
-GtkScrolledWindow GtkViewport.frame {
+scrolledwindow viewport.frame {
     border-style: none;
 }
 /************
@@ -358,6 +373,36 @@ GtkStatusbar {
     padding: 4px;
     color: @theme_fg_color;
 }
+/*************
+ * popover *
+ *************/
+
+popover.menu,
+popover.background {
+    background-color: @theme_bg_color;
+	border: 4px solid @theme_selected_bg_color;
+    background-clip: border-box;
+    padding: 5px 5px;
+}
+
+popover label {
+	padding: 0px 5px;
+}
+
+popover modelbutton {
+	padding: 5px 5px;
+}
+
+popover modelbutton:hover {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+popover modelbutton:active {
+	background-color: shade(@theme_selected_bg_color, 0.9);
+	color: @theme_selected_fg_color;
+}
+
 /************
  * textview *
  ************/
@@ -416,7 +461,7 @@ popover.background radiobutton:selected,
 .menuitem.button.flat:selected,
 row:selected,
 calendar:selected {
-    background-color: @theme_selected_bg_color;
+	background-color: @theme_selected_bg_color;
 }
 row:selected label,
 label:selected,
@@ -686,6 +731,7 @@ GtkBubbleWindow {
     background-color: @theme_tooltip_bg_color;
     border-radius: 0;
     background-clip: border-box;
+	padding: 10px;
 }
 GtkBubbleWindow.osd.background {
     background-color: @theme_tooltip_bg_color;
