@@ -13,13 +13,15 @@ button {
     color: @text_color;
 }
 
+
 button:hover {
     background-color: shade(@selected_bg_color, 0.9);
     color: @fg_color;
 }
 
 button:active,
-button:active:hover {
+button:active:hover,
+button.toggle:checked {
     color: @fg_color;
     background-color: shade(@selected_bg_color, 0.83);
 }
