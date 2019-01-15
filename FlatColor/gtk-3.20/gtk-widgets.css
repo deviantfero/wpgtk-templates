@@ -563,7 +563,7 @@ treeview.view:drop(active).before {
 treeview.view.expander {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
     -gtk-icon-transform: rotate(-90deg);
-    color: shade( @theme_selected_bg_color, 0.8);
+    color: @theme_fg_color;
 }
 treeview.view.expander:dir(rtl) {
     -gtk-icon-transform: rotate(90deg);
@@ -579,14 +579,14 @@ treeview.view.expander:disabled {
     color: shade( @theme_selected_bg_color, 0.24);
 }
 treeview.view.expander:selected {
-    color: shade( @theme_selected_bg_color, 0.8);
+    color: @theme_selected_fg_color;
 }
 treeview.view.expander:selected:hover,
 treeview.view.expander:selected:active {
-    color: shade( @theme_selected_bg_color, 1.0);
+    color: @theme_selected_fg_color;
 }
 treeview.view.expander:selected:disabled {
-    color: shade( @theme_selected_bg_color, 1.0);
+    color: @theme_selected_fg_color;
 }
 treeview.view.progressbar {
     border-style: none none solid;
