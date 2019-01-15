@@ -12,12 +12,17 @@ radio {
 radio {
     border-radius: 10px;
 }
+
+check:disabled,
+radio:disabled {
+	background-color: mix(@theme_bg_color, @theme_fg_color, 0.1);
+}
+
 check:hover,
 check:active,
 radio:hover,
 radio:active {
-    color: currentColor;
-    background-color: shade(@selected_bg_color, 0.3);
+    background-color: shade(@selected_bg_color, 0.5);
 }
 check:checked,
 check:checked:disabled,
@@ -42,43 +47,49 @@ radio:only-child {} menu menuitem check,
 menu menuitem radio {
     transition: none;
 }
+
 menu menuitem check:not(:checked):not(:indeterminate):hover,
 menu menuitem radio:not(:checked):not(:indeterminate):hover {
     color: alpha(currentColor, 0.75);
 }
+
 menu menuitem check,
 menu menuitem check:hover,
 menu menuitem check:disabled,
 menu menuitem radio,
 menu menuitem radio:hover,
 menu menuitem radio:disabled {
-    background-image: none;
+	margin: 0;
+	padding: 0;
 }
-check {
-    -gtk-icon-source: image(-gtk-recolor(url("../assets/check-mixed.png")), -gtk-recolor(url("../assets/check-mixed.png")));
+
+menu menuitem check:checked {
+    -gtk-icon-source: -gtk-scaled(url("../assets/check.png"));
 }
+
 check:checked {
-    -gtk-icon-source: image(-gtk-recolor(url("../assets/check.png")), -gtk-recolor(url("../assets/check.png")));
+    -gtk-icon-source: -gtk-recolor(url("../assets/check.png"));
 }
 check:indeterminate {
-    -gtk-icon-source: image(-gtk-recolor(url("../assets/check-mixed.png")), -gtk-recolor(url("../assets/check-mixed.png")));
+    -gtk-icon-source: -gtk-recolor(url("../assets/check-mixed.png"));
 }
 radio {
     border-image: -gtk-gradient(radial, center center, 0, center center, 0.001, to(@selected_bg_color), to(transparent)) 24/24px;
     -gtk-icon-source: image(-gtk-recolor(url("../assets/blank.png")), -gtk-recolor(url("../assets/blank.png")));
 }
 radio:checked {
-    -gtk-icon-source: image(-gtk-recolor(url("../assets/blank.png")), -gtk-recolor(url("../assets/blank.png")));
+    -gtk-icon-source: -gtk-recolor(url("../assets/blank.png"));
 }
 radio:checked:disabled {
     border-image: -gtk-gradient(radial, center center, 0, center center, 0.10417, to(rgba(68, 138, 255, 0.4)), to(transparent)) 24/24px;
 }
 radio:indeterminate {
-    -gtk-icon-source: image(-gtk-recolor(url("../assets/blank.png")), -gtk-recolor(url("../assets/blank.png")));
+    -gtk-icon-source: -gtk-recolor(url("../assets/blank.png"));
 }
 radio:indeterminate:checked {
-    -gtk-icon-source: image(-gtk-recolor(url("../assets/blank.png")), -gtk-recolor(url("../assets/blank.png")));
+    -gtk-icon-source: -gtk-recolor(url("../assets/blank.png"));
 }
+
 menu menuitem check:not(:indeterminate):checked,
 menu menuitem radio:not(:indeterminate):checked,
 menu menuitem check:indeterminate:checked,
