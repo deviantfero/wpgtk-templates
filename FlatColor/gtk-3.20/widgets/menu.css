@@ -109,16 +109,19 @@ menu separator,
 menuitem accelerator {
     color: alpha(currentColor, 0.6);
 }
-menuitem check:dir(ltr),
-menuitem radio:dir(ltr) {
-    margin-right: -8px;
-    margin-left: -16px;
+
+menu menuitem check:dir(ltr),
+menu menuitem radio:dir(ltr) {
+	margin-right: 10px;
+    padding: 8px;
 }
-menuitem check:dir(rtl),
-menuitem radio:dir(rtl) {
-    margin-right: -16px;
-    margin-left: -8px;
+
+menu menuitem check:dir(rtl),
+menu menuitem radio:dir(rtl) {
+	margin-left: 10px;
+    padding: 8px;
 }
-.csd.popup {
+
+csd.popup {
     border-radius: 2px;
 }
