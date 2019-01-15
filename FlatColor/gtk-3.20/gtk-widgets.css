@@ -112,7 +112,7 @@ placessidebar > viewport.frame {
 }
 placessidebar row {
     min-height: 2px;
-    padding: 0;
+    padding: 5px;
 }
 placessidebar row > revealer {
     padding: 0 5px;
