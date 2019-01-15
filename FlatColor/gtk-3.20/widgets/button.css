@@ -44,3 +44,8 @@ GtkLinkButton.button:focus:active,
 GtkLinkButton.button:focus:hover {
 
 }
+
+button.radio:checked {
+    color: @fg_color;
+    background-color: shade(@selected_bg_color, 0.83);
+}
