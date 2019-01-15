@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #	default color: 178984
 glyphColorOriginal=294045
 glyphColorNew=444d25
