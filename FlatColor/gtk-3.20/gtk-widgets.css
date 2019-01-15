@@ -714,14 +714,19 @@ EggListBox:hover {
 EggListBox:selected {
     background-color: @theme_selected_bg_color;
 }
-.list {
+list {
     background-color: @theme_base_color;
 }
-.list-row:hover {
-    background-color: mix(white, @theme_selected_bg_color, 0.05);
+
+list.row:hover {
+    background-color: shade(@selected_bg_color, 0.9);
+    color: @fg_color;
 }
-.list-row:selected {
-    background-color: @theme_selected_bg_color;
+list.row:active,
+list.row:active:hover,
+list.row:checked {
+    color: @fg_color;
+    background-color: shade(@selected_bg_color, 0.83);
 }
 /*************************
  * touch text selections *
