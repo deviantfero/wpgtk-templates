@@ -3,10 +3,10 @@ rofi.width:                          50
 rofi.lines:                          15
 rofi.columns:                        1
 rofi.font:                           roboto mono 10
-rofi.color-normal:                   #<COLOR0>, #<COLOR15>, #<COLOR0>, #<COLORACT>, #<COLOR15>
-rofi.color-urgent:                   #<COLOR0>, #d6b48d, #22231D, #d6b48d, #<COLOR15>
-rofi.color-active:                   #<COLOR0>, #<COLOR14>, #<COLOR0>, #<COLOR14>, #<COLOR0>
-rofi.color-window:                   #<COLOR0>, #<COLORACT>, #<COLORIN>
+rofi.color-normal:                   {color0}, {color15}, {color0}, {active}, {color15}
+rofi.color-urgent:                   {color0}, #d6b48d, #22231D, #d6b48d, {color15}
+rofi.color-active:                   {color0}, {color14}, {color0}, {color14}, {color0}
+rofi.color-window:                   {color0}, {active}, {inactive}
 rofi.bw:                             5
 rofi.location:                       0
 rofi.padding:                        5
@@ -15,8 +15,8 @@ rofi.xoffset:                        0
 rofi.fixed-num-lines:                true
 rofi.terminal:                       rofi-sensible-terminal
 rofi.ssh-client:                     ssh
-rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
-rofi.run-command:                    {cmd}
+rofi.ssh-command:                    {{terminal}} -e {{ssh-client}} {{host}}
+rofi.run-command:                    {{cmd}}
 rofi.parse-hosts:                    true
 rofi.matching:                       normal
 rofi.separator-style:                none
