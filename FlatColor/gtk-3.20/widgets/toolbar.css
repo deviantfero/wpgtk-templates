@@ -16,6 +16,10 @@ toolbar button.text-button {
     padding: 2px 4px;
 }
 
+toolbar button.path-bar-button {
+	padding: 6px;
+}
+
 toolbar button.image-button {
     padding: 2px;
 }
