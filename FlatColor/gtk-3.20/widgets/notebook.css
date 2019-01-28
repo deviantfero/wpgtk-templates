@@ -114,6 +114,7 @@ notebook > header tab {
     color: @selected_fg_color;
     font-weight: 500;
 }
+
 notebook > header tab:hover {
     color: @selected_fg_color;
 }
