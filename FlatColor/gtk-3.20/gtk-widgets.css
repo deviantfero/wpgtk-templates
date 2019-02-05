@@ -228,9 +228,6 @@ GtkHTML {
 
 frame {
     border-radius: 0;
-    border-width: 2px;
-    border-style: solid;
-    border-color: shade( @theme_bg_color, 1.2);
 }
 
 frame.border-groove,
@@ -259,6 +256,9 @@ scrolledwindow.frame {
 /* avoid double borders when a viewport is 
  * packed into a GtkScrolledWindow */
 
+scrolledwindow.shortcuts-pane.sidebar treeview {
+	background-color: @theme_bg_color;
+}
 scrolledwindow viewport.frame {
     border-style: none;
 }
@@ -369,9 +369,9 @@ GtkLabel:disabled {
  * statusbar *
  *************/
 
-GtkStatusbar {
-    padding: 4px;
+statusbar {
     color: @theme_fg_color;
+	background-color: @theme_bg_color;
 }
 /*************
  * popover *
