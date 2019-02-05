@@ -8,7 +8,7 @@ button {
     border-style: solid;
     border-color: transparent;
     border-radius: 0px;
-    background-color: shade(@color8, 1.15);
+    background-color: @button_normal_color;
     background-image: none;
     color: @text_color;
 }

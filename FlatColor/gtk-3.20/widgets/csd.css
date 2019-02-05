@@ -31,6 +31,10 @@
     font-weight: bold;
 }
 
+.titlebar {
+	padding: 3px;
+}
+
 .titlebar:backdrop {
     background-image: none;
     background-color: @bg_color;
@@ -41,7 +45,7 @@
 .titlebutton {
     padding: 4px;
     border-style: none;
-    background-color: shade(@color8, 1.15);
+    background-color: @button_normal_color;
     color: mix(@fg_color, @bg_color, 0.1);
     -gtk-icon-shadow: none;
 }
