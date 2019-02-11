@@ -1,25 +1,24 @@
-
 /* Default color scheme */
-@define-color color0 #<COLOR0>;
-@define-color color1 #<COLOR1>;
-@define-color color2 #<COLOR2>;
-@define-color color3 #<COLOR3>;
-@define-color color4 #<COLOR4>;
-@define-color color5 #<COLOR5>;
-@define-color color6 #<COLOR6>;
-@define-color color7 #<COLOR7>;
-@define-color color8 #<COLOR8>;
-@define-color color9 #<COLOR9>;
-@define-color color10 #<COLOR10>;
-@define-color color11 #<COLOR11>;
-@define-color color12 #<COLOR12>;
-@define-color color13 #<COLOR13>;
-@define-color color14 #<COLOR14>;
-@define-color color15 #<COLOR15>;
-@define-color selected_bg_color #<COLORACT>;
-@define-color bg_color @color8;
-@define-color tooltip_bg_color shade(@color0, 1.20);
-@define-color base_color mix(@color8, @color0, 1.2);
+@define-color color0 {color0};
+@define-color color1 {color1};
+@define-color color2 {color2};
+@define-color color3 {color3};
+@define-color color4 {color4};
+@define-color color5 {color5};
+@define-color color6 {color6};
+@define-color color7 {color7};
+@define-color color8 {color8};
+@define-color color9 {color9};
+@define-color color10 {color10};
+@define-color color11 {color11};
+@define-color color12 {color12};
+@define-color color13 {color13};
+@define-color color14 {color14};
+@define-color color15 {color15};
+@define-color selected_bg_color {active};
+@define-color bg_color mix(@color0, @color15, 0.12);
+@define-color tooltip_bg_color mix(@color0, @color15, 0.04);
+@define-color base_color mix(@color0, @color15, 0);
 @define-color fg_color @color15;
 @define-color text_color @color15;
 @define-color selected_fg_color @color15;
@@ -55,7 +54,7 @@
 
 /* widget colors*/
 @define-color border_color shade(@theme_selected_bg_color, 0.2);
-@define-color button_normal_color @border_color;
+@define-color button_normal_color shade(@theme_bg_color, 1.20);
 @define-color button_info_color @theme_selected_bg_color;
 @define-color button_default_active_color @theme_selected_bg_color;
 @define-color entry_border_color shade(@theme_base_color, 0.9);
