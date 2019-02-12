@@ -1,6 +1,6 @@
 #modded Numix gtkrc
 
-gtk-color-scheme = "bg_color:{color8}
+gtk-color-scheme = "bg_color:{color0}
 color0:{color0}
 color1:{color1}
 color2:{color2}
@@ -20,11 +20,11 @@ color15:{color15}
 text_color:{color15}
 selected_bg_color:{active}
 selected_fg_color:{color15}
-tooltip_bg_color:{color8}
+tooltip_bg_color:{color0}
 tooltip_fg_color:{color15}
-titlebar_bg_color:{color8}
+titlebar_bg_color:{color0}
 titlebar_fg_color:{color15}
-menu_bg_color:{color8}
+menu_bg_color:{color0}
 menu_fg_color:{color15}
 link_color:{active}"
 gtk-auto-mnemonics	= 1
