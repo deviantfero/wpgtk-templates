@@ -13,6 +13,10 @@ button {
     color: @text_color;
 }
 
+button:focus {
+    border: @selected_bg_color 2px dotted;
+    color: @fg_color;
+}
 
 button:hover {
     background-color: shade(@selected_bg_color, 0.9);
