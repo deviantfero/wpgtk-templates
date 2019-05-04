@@ -55,7 +55,7 @@
 
 /* widget colors*/
 @define-color border_color shade(@theme_selected_bg_color, 0.2);
-@define-color button_normal_color @border_color;
+@define-color button_normal_color shade(@theme_bg_color, 1.20);
 @define-color button_info_color @theme_selected_bg_color;
 @define-color button_default_active_color @theme_selected_bg_color;
 @define-color entry_border_color shade(@theme_base_color, 0.9);
@@ -106,3 +106,4 @@
 @import url("widgets/csd.css");
 @import url("widgets/combobox.css");
 @import url("widgets/selection-mode.css");
+@import url("widgets/chrome.css");
