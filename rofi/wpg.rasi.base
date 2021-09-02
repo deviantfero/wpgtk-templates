@@ -35,19 +35,19 @@
     selected-normal-background:		@active;
     selected-normal-foreground:		@foreground;
 
-    active-background:				@active;
+    active-background:				@inactive;
     active-foreground:				@foreground;
     alternate-active-background:	@active;
     alternate-active-foreground:	@foreground;
-    selected-active-background:		@color13;
-    selected-active-foreground:		@color15;
+    selected-active-background:		@active;
+    selected-active-foreground:		@foreground;
 
     urgent-background:				@color8;
     urgent-foreground:				@color15;
     alternate-urgent-background:	@color8;
     alternate-urgent-foreground:	@color15;
     selected-urgent-background:		@color14;
-    selected-urgent-foreground:		@color15;
+    selected-urgent-foreground:		@foreground;
 }}
 
 
