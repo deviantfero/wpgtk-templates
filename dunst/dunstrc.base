@@ -8,11 +8,9 @@
     monitor = 0
     follow = mouse
 
-    geometry = "540x5-10+32"
     indicate_hidden = yes
     shrink = yes
     transparency = 0
-    notification_height = 0
     separator_height = 3
     padding = 12
     horizontal_padding = 12
@@ -24,7 +22,7 @@
     idle_threshold = 120
 
     ### Text ###
-    font = go mono 9
+    # font = inter 10
     line_height = 0
 
     markup = full
@@ -64,29 +62,17 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    startup_notification = false
     force_xinerama = false
 
 [experimental]
     per_monitor_dpi = false
 
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    context = ctrl+shift+period
-
 [urgency_low]
-    background = colors.background
-    foreground = colors.foreground
     timeout = 10
 
 [urgency_normal]
-    background = colors.background
-    foreground = colors.foreground
     timeout = 10
 
 [urgency_critical]
-    background = colors.background
-    foreground = colors.foreground
     frame_color = "{color9}"
     timeout = 0
