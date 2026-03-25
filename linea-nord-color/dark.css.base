@@ -70,3 +70,8 @@ window-frame, window, headerbar, .titlebar, menubar {{
 	box-shadow: none;
 	margin: 1px;
 }}
+
+*:focus {{
+	outline: 2px dotted alpha(currentColor, 0.5);
+	outline-offset: 2px;
+}}
