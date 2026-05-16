@@ -1,5 +1,6 @@
 
 @import url("gtk-version.css");
+@import url("widgets-version.css");
 @import url("../general/gtk-colors.css");
 @import url("../general/widgets.css");
 @import url("../general/titlebar.css");
@@ -72,6 +73,6 @@ window-frame, window, headerbar, .titlebar, menubar {{
 }}
 
 *:focus {{
-	outline: 2px dotted alpha(currentColor, 0.5);
-	outline-offset: 2px;
+	outline: 1px dashed alpha(currentColor, 0.3);
+	outline-offset: -2px;
 }}

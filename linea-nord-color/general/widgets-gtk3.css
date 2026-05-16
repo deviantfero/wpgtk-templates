@@ -1,0 +1,67 @@
+/* GTK3-specific widget rules — GtkMenu selectors and other GTK3-only constructs */
+
+/* Inline Toolbar */
+
+toolbar.inline-toolbar:not(actionbar) toolbutton > button.flat
+{ border-right-style: none; border-radius: 0; }
+
+toolbar.inline-toolbar:not(actionbar) toolbutton:first-child > button.flat
+{ border-top-left-radius: 4.0px; border-bottom-left-radius: 4.0px; }
+
+toolbar.inline-toolbar:not(actionbar) toolbutton:last-child > button.flat
+{ border-right-style: solid; border-top-right-radius: 4.0px; border-bottom-right-radius: 4.0px; }
+
+toolbar.inline-toolbar:not(actionbar) toolbutton:only-child > button.flat
+{ border-style: solid; border-radius: 4.0px; }
+
+/* Menu Arrow Icon Sources */
+
+menu menuitem arrow:dir(rtl),
+.menu menuitem arrow:dir(rtl)
+{ -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
+
+menu menuitem arrow:dir(ltr),
+.menu menuitem arrow:dir(ltr)
+{ -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
+
+menu > arrow.top,
+.menu > arrow.top
+{ -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
+
+menu > arrow.bottom,
+.menu > arrow.bottom
+{ -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+
+/* Menu Container */
+
+.csd menu { padding: 4px 0; }
+
+menu,
+.menu { border-radius: 4.0px; }
+
+menu separator,
+.csd menu separator,
+.menu separator,
+.csd .menu separator
+{ margin: 4px 8px; background-color: @gtk_transparent_borders; box-shadow: none; }
+
+/* Menu Items */
+
+menu menuitem,
+.menu menuitem { padding: 5px 8px; }
+
+menu menuitem:disabled,
+.menu menuitem:disabled { color: @insensitive_fg_color; }
+
+menu menuitem:hover,
+.menu menuitem:hover { color: @gtk_selected_fg_color; background-color: @gtk_selected_bg_color; }
+
+/* Treeview Column Headers */
+
+treeview.view > header > button
+{ padding: 2px 4px; }
+
+/* Dialogs */
+
+messagedialog,
+.prompt { -gtk-icon-style: regular; }

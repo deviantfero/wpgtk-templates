@@ -1,5 +1,6 @@
 
 @import url("gtk-version.css");
+@import url("widgets-version.css");
 @import url("../general/gtk-colors.css");
 @import url("../general/widgets.css");
 @import url("../general/titlebar.css");
