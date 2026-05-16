@@ -128,8 +128,7 @@ tabbox tab,
 notebook tab,*/
 scale trough,
 levelbar trough,
-menu,
-.menu,
+popover.menu,
 editablelabel > stack > text
 { border-width: 1px; border-style: solid; } /* widget borders */
 
@@ -181,10 +180,8 @@ levelbar block.high,
 scale highlight,
 switch,
 switch slider,
-menu
+popover.menu
 {border-color: @gtk_transparent_borders;}
-
-/* use this if gtk4 doesnt respond to the background-clip of widgets */
 
 check,
 radio,
@@ -742,7 +739,7 @@ actionbar viewswitcher button box{ padding: 0;}
 /* Treeview Button */
 
 treeview.view button,
-columnview.view button{border-radius: 0; background-color: @gtk_bg_color; box-shadow: none; border-width: 0 1px 1px 0; }
+columnview.view button{border-radius: 0; background-color: @gtk_bg_color; box-shadow: none; border-width: 0 1px 1px 0; padding: 2px 4px;}
 
 treeview.view button:last-child,
 columnview.view button:last-child{border-width: 0 0 1px 0;}
@@ -761,20 +758,16 @@ columnview.view button:checked
 
 .linked spinbutton.horizontal{border-radius: 0;}
 
-.inline-toolbar:not(actionbar) button,
-toolbar.inline-toolbar:not(actionbar) toolbutton > button.flat
+.inline-toolbar:not(actionbar) button
 { border-right-style: none; border-radius: 0; }
 
-.inline-toolbar:not(actionbar) button:first-child,
-toolbar.inline-toolbar:not(actionbar) toolbutton:first-child > button.flat
+.inline-toolbar:not(actionbar) button:first-child
 { border-top-left-radius: 4.0px; border-bottom-left-radius: 4.0px; }
 
-.inline-toolbar:not(actionbar) button:last-child,
-toolbar.inline-toolbar:not(actionbar) toolbutton:last-child > button.flat
+.inline-toolbar:not(actionbar) button:last-child
 { border-right-style: solid; border-top-right-radius: 4.0px; border-bottom-right-radius: 4.0px;}
 
-.inline-toolbar:not(actionbar) button:only-child,
-toolbar.inline-toolbar:not(actionbar) toolbutton:only-child > button.flat
+.inline-toolbar:not(actionbar) button:only-child
 { border-style: solid; border-radius: 4.0px; }
 
 /* Linked Horizontal */
@@ -1150,16 +1143,12 @@ notebook > header.top > tabs > arrow.down,
 notebook > header.bottom > tabs > arrow.down,
 scrollbar.horizontal button.up,
 menubutton arrow.left,
-menu menuitem arrow:dir(rtl),
-.menu menuitem arrow:dir(rtl),
 expander arrow:dir(rtl),
 expander:dir(rtl),
 treeview.view.expander:dir(rtl),
 columnview.view.expander:dir(rtl)
 { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");}
 
-menu menuitem arrow:dir(ltr),
-.menu menuitem arrow:dir(ltr),
 modelbutton.flat arrow.right,
 expander arrow,
 expander,
@@ -1170,8 +1159,6 @@ scrollbar.horizontal button.down,
 columnview.view.expander
 { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");}
 
-menu > arrow.top,
-.menu > arrow.top,
 scrollbar.vertical button.up,
 menubutton arrow.up,
 menubutton arrow.right,
@@ -1179,8 +1166,6 @@ columnview.view > header > button sort-indicator.ascending,
 treeview.view > header > button sort-indicator.ascending
 { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");}
 
-menu > arrow.bottom,
-.menu > arrow.bottom,
 expander arrow:checked,
 expander:checked,
 treeview.view.expander:checked,
@@ -1405,9 +1390,6 @@ menubar:backdrop,
 .menubar:backdrop,
 window.background:not(.csd):not(.solid-csd) > grid.horizontal > grid.horizontal:backdrop{background-color: @gtk_titlebar_bg_backdrop_color;}
 
-.csd menu,
-.csd .menu{ padding: 4px 1px; }
-
 popover.menu.background > contents,
 popover.background.menu > contents { padding: 4px 0; }
 popover.background > contents{padding: 4px;}
@@ -1422,18 +1404,11 @@ menubar > menuitem,
 menubar > item
 { padding: 6px 8px; }
 
-menu menuitem,
-.menu menuitem
-{ padding: 5px 8px; }
+/* menuitem padding handled by popover.menu.background > contents modelbutton above */
 
-menu separator,
-.csd menu separator,
-.menu separator,.csd
-.menu separator,
 popover.menu.background separator { margin: 4px 8px; background-color: @gtk_transparent_borders; box-shadow: none;}
 
-menu menuitem:disabled,
-.menu menuitem:disabled{color: @insensitive_fg_color;}
+/* disabled state handled by modelbutton.flat:disabled via the disabled rule above */
 
 /* Popovers */
 
@@ -1641,7 +1616,7 @@ button.osd.image-button {
  ***********/
  
 messagedialog,
-.prompt {-gtk-icon-style: regular;}
+.prompt {}
 
 dialog buttonbox,
 .dialog-action-area
@@ -1888,8 +1863,6 @@ dialog decoration,
 messagedialog decoration,
 .unified decoration,
 .background.csd decoration,
-menu,
-.menu,
 .background.popup { border-radius: 4.0px;}
 
 .background.maximized,
@@ -1926,9 +1899,8 @@ window.assistant .sidebar > label.highlight
 
 /* Menu and Popover */
 menubar > menuitem:hover,
+menubar > item:hover,
 .menubar > menuitem:hover,
-menu menuitem:hover,
-.menu menuitem:hover,
 menuitem.button.flat:hover,
 popover button.menuitem:hover,
 popover .menuitem:hover,
