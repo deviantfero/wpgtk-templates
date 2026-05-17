@@ -1,1 +1,35 @@
 /* GTK4-specific widget rules */
+
+/* Remove CSD shadow margin and rounded corners — WM provides its own borders */
+window,
+window.background,
+window.csd,
+window.background.csd,
+window > decoration,
+window.csd > decoration {
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+  background-clip: border-box;
+}
+window > decoration-resize,
+window.csd > decoration-resize {
+  margin: 0;
+  box-shadow: none;
+}
+window.background { background-color: @theme_bg_color; }
+window:backdrop,
+window.csd:backdrop,
+window:backdrop > decoration,
+window.csd:backdrop > decoration {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Only show focus ring on keyboard focus, not mouse clicks */
+*:focus:not(:focus-visible) { outline: none; }
+entry:focus-within:not(:focus-visible),
+spinbutton:focus-within:not(:focus-visible):not(.vertical),
+spinbutton.vertical > text:focus-within:not(:focus-visible)
+{ outline-color: transparent; outline-width: 0; }

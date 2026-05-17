@@ -739,7 +739,7 @@ actionbar viewswitcher button box{ padding: 0;}
 /* Treeview Button */
 
 treeview.view button,
-columnview.view button{border-radius: 0; background-color: @gtk_bg_color; box-shadow: none; border-width: 0 1px 1px 0; padding: 2px 4px;}
+columnview.view button{border-radius: 0; background-color: @gtk_bg_color; box-shadow: none; border-width: 0 1px 1px 0; padding: 2px 4px; min-height: 0;}
 
 treeview.view button:last-child,
 columnview.view button:last-child{border-width: 0 0 1px 0;}
