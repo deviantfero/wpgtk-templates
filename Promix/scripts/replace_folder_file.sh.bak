@@ -1,0 +1,22 @@
+
+#!/usr/bin/env bash
+#	default color: 178984
+oldglyph=#27190f
+newglyph=#082434
+
+#	Front
+#	default color: 36d7b7
+oldfront=#593923
+newfront=#125074
+
+#	Back
+#	default color: 1ba39c
+oldback=#3d2718
+newback=#0c374f
+#sed -i "s/#1d344f/$oldglyph/g" $1
+#sed -i "s/#5294e2/$oldfront/g" $1
+#sed -i "s/#4877b1/$oldback/g" $1
+sed -i "s/$oldglyph/$newglyph/g" "$1"
+sed -i "s/$oldfront/$newfront/g" "$1"
+sed -i "s/$oldback/$newback/g" "$1"
+
